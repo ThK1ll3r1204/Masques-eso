@@ -27,12 +27,6 @@ public class GoblinAttack : MonoBehaviour
 
     void Update()
     {
-        DetectinPLayer();
-
-    }
-
-    private void DetectinPLayer()
-    {
         if (detect.playerDetected && detect.distanceToPlayer > 5f)
         {
             distance = Vector2.Distance(transform.position, player.transform.position);
@@ -42,9 +36,9 @@ public class GoblinAttack : MonoBehaviour
         if (detect.playerDetected && _bCooldowntimer <= 0)
         {
             ShootThePlayer();
-        }
-    }
+        } 
 
+    }
     private void FixedUpdate()
     {
         //Cooldown del disparo

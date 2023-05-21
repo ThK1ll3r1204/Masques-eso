@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PatroleMovement : MonoBehaviour
 {
-    [SerializeField] public GoblinDetect detect;
-
     float timerStay;
     float maxTimerStay;
 
@@ -18,10 +16,6 @@ public class PatroleMovement : MonoBehaviour
     public float MoveSpeed;
     float sideToLook;
     float randomSide;
-    private void Awake()
-    {
-        detect = GetComponent<GoblinDetect>();
-    }
 
     private void Start()
     {
@@ -30,10 +24,8 @@ public class PatroleMovement : MonoBehaviour
     }
     void Update()
     {
-        if (!detect.playerFocused)
-        {
-            if (timerStay > maxTimerStay)
-            {
+           if (timerStay > maxTimerStay)
+           { 
                 timerMove += Time.deltaTime;
                 if (timerMove > maxTimerMove)
                 {
@@ -50,15 +42,15 @@ public class PatroleMovement : MonoBehaviour
 
                 if (timerMove < maxTimerMove)
                 {
-                    Move(sideToLook);
+                     Move(sideToLook);
                 }
-            }
+           }
 
-            timerReset += Time.deltaTime;
-            timerStay += Time.deltaTime;
+        timerReset += Time.deltaTime;
+        timerStay += Time.deltaTime;
 
-        }
-    }
+    } 
+
 
 
    

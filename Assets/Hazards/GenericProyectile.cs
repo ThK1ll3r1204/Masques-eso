@@ -51,9 +51,6 @@ public class GenericProyectile : MonoBehaviour
             eLife.life -= finalDamage;
             Destroy(this.gameObject);
         }
-
-
-        Destroy(this.gameObject);
     }
 
     private GameObject player;
@@ -80,7 +77,7 @@ public class GenericProyectile : MonoBehaviour
 
     public void MakeDamage(float actualDamage)
     {
-        //Calcula el daï¿½o que hara gracias a la cantidad de calcio
+        //Calcula el daño que hara gracias a la cantidad de calcio
         float finalDamage = damage / (pStats._calcio / 115f);
         pStats._pLife -= finalDamage;
     }
@@ -108,7 +105,6 @@ public class GenericProyectile : MonoBehaviour
             Player = null;
         }
     }
-
 
 
     IEnumerator CounterBlock()

@@ -6,9 +6,13 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] float _speed;
+    public bool isWalking = true;
+
+    public PlayerStats pStats;
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        pStats = this.GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -16,8 +20,16 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 _move = new Vector2(horizontal, vertical).normalized;
+        if (!pStats.isDead)
+        {
+            Vector2 _move = new Vector2(horizontal, vertical).normalized;
+            _rb.velocity = _move * _speed;
 
-        _rb.velocity = _move * _speed;
+
+            if (horizontal != 0f || vertical != 0f)
+                isWalking = true;
+            else
+                isWalking = false;
+        }
     }
 }
