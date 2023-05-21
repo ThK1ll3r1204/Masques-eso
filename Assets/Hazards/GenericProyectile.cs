@@ -80,7 +80,7 @@ public class GenericProyectile : MonoBehaviour
 
     public void MakeDamage(float actualDamage)
     {
-        //Calcula el daño que hara gracias a la cantidad de calcio
+        //Calcula el daï¿½o que hara gracias a la cantidad de calcio
         float finalDamage = damage / (pStats._calcio / 115f);
         pStats._pLife -= finalDamage;
     }
