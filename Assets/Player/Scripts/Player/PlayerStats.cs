@@ -36,7 +36,15 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
+    public void TakeDamage(float damage)
+    {
+        _pLife += damage;
+        // Muerto? xd
+        if (_pLife <= 0f)
+        {
+            Die();
+        }
+    }
     public void Die()
     {
         //Efectivamente murio
