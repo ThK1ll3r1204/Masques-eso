@@ -7,9 +7,12 @@ public class BatXplode : MonoBehaviour
     [SerializeField] float speed = 3f;           // Velocidad de movimiento del enemigo
     [SerializeField] float chaseRange = 5f;      // Rango de persecución del enemigo
     [SerializeField] float explosionRange = 1f;  // Rango de explosión del enemigo
-    
-    [SerializeField] GameObject explosionPrefab; // Prefab de la explosión
 
+    [SerializeField] float xplodeTimer;
+    [SerializeField] float maxXplodeTimer;
+
+    [SerializeField] GameObject explosionPrefab; // Prefab de la explosión
+    [SerializeField] Animator anim;
     [SerializeField] Transform player;          // transform del jugador
     [SerializeField] Rigidbody2D rb;
 
@@ -20,6 +23,7 @@ public class BatXplode : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -44,22 +48,30 @@ public class BatXplode : MonoBehaviour
 
         if (distanceToPlayer <= explosionRange)
         {
-            Explode();
+            xplodeTimer += Time.deltaTime;
+
+            if (xplodeTimer >= maxXplodeTimer)
+            {
+                anim.SetBool("Boom", true);
+
+                Explode();
+            }
+            else { anim.SetBool("Boom", false); }
+
         }
 
-        
+
 
     }
 
     private void Explode()
     {
-        Debug.Log("Explotó");
+        
 
         if (hasExploded)  // Verificar si la explosión ya ha ocurrido
             return;
 
         hasExploded = true;
-
         speed = 0;
         // daño al jugador xd
         PlayerStats playerLife = player.GetComponent<PlayerStats>();
@@ -72,7 +84,7 @@ public class BatXplode : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
 
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 1f);
     }
 
     private void OnDrawGizmos()
