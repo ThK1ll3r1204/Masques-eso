@@ -8,7 +8,7 @@ public class GoblinAttack : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject goblinRock;
     [SerializeField] public float moveSpeed;
-
+    [SerializeField] public Animator anim;
 
     [SerializeField] float _bSpeed;
     [SerializeField] float _bCooldown;
@@ -36,6 +36,7 @@ public class GoblinAttack : MonoBehaviour
         if (detect.playerDetected && _bCooldowntimer <= 0)
         {
             ShootThePlayer();
+            anim.SetTrigger("Shoot");
         } 
 
     }

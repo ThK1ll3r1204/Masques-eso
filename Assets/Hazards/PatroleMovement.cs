@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PatroleMovement : MonoBehaviour
 {
-    float timerStay;
-    float maxTimerStay;
+    public float timerStay;
+    public float maxTimerStay;
 
-    float timerMove = 0;
-    float maxTimerMove;
+    public float timerMove = 0;
+    public float maxTimerMove;
 
     float timerReset;
     float maxTimerReset = 0.01f;
@@ -16,6 +16,8 @@ public class PatroleMovement : MonoBehaviour
     public float MoveSpeed;
     float sideToLook;
     float randomSide;
+
+    Animator anim;
 
     private void Start()
     {
@@ -29,6 +31,8 @@ public class PatroleMovement : MonoBehaviour
                 timerMove += Time.deltaTime;
                 if (timerMove > maxTimerMove)
                 {
+                    //anim.SetBool("Idle", true);
+                    //anim.SetBool("Walking", false);
                     timerReset = 0;
                     if (timerReset < maxTimerReset)
                     {
@@ -42,9 +46,12 @@ public class PatroleMovement : MonoBehaviour
 
                 if (timerMove < maxTimerMove)
                 {
-                     Move(sideToLook);
+                    //anim.SetBool("Walking", true);
+                    //anim.SetBool("Idle", false);
+                    Move(sideToLook);
                 }
            }
+           
 
         timerReset += Time.deltaTime;
         timerStay += Time.deltaTime;
