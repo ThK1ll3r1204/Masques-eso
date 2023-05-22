@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5827956217305709755
 SpriteRenderer:
@@ -128,17 +128,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c75153770bf58a498f630cdf8e9e8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 8
   chaseRange: 15
-  explosionRange: 2
+  explosionRange: 1.3
   xplodeTimer: 0
   maxXplodeTimer: 0.5
   explosionPrefab: {fileID: 4644337503331913786, guid: 380434cc29c5f6141acb0497cd8d297e, type: 3}
   anim: {fileID: 0}
-  player: {fileID: 0}
+  jugador: {fileID: 0}
   rb: {fileID: 0}
   hasExploded: 0
   isChasing: 0
+  detectorOrigin: {fileID: 3730796686370885674}
+  radius: 8.4
+  detectorLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  counterShot: 0
 --- !u!58 &6232383666478922864
 CircleCollider2D:
   m_ObjectHideFlags: 0

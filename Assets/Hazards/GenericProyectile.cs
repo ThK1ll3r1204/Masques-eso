@@ -8,7 +8,7 @@ public class GenericProyectile : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] Rigidbody2D rb2d;
 
-    private bool counterShot;
+    public bool counterShot;
 
     //Detector raycast
     [field: SerializeField]

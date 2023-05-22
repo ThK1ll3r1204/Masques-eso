@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatXplode : MonoBehaviour
 {
-    [SerializeField] float speed = 3f;           // Velocidad de movimiento del enemigo
+    [SerializeField] float speed;           // Velocidad de movimiento del enemigo
     [SerializeField] float chaseRange = 5f;      // Rango de persecución del enemigo
     [SerializeField] float explosionRange = 1f;  // Rango de explosión del enemigo
 
@@ -13,32 +13,57 @@ public class BatXplode : MonoBehaviour
 
     [SerializeField] GameObject explosionPrefab; // Prefab de la explosión
     [SerializeField] Animator anim;
-    [SerializeField] Transform player;          // transform del jugador
+    [SerializeField] Transform jugador;          // transform del jugador
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] bool hasExploded = false;  // controlar si la explosión ya ha ocurrido
 
     [SerializeField] bool isChasing = false;
 
+
+
+    public Transform detectorOrigin;
+    public float radius;
+    public LayerMask detectorLayerMask;
+    public bool counterShot;
+
+
+    public bool playerDetected { get; private set; }
+
+
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        counterShot = false;
+
+    }
+
+    private GameObject player;
+    public GameObject Player
+    {
+        get => player;
+        private set
+        {
+            player = value;
+            playerDetected = player != null;
+
+        }
     }
 
     void Update()
     {
         // Calcula la distancia entre el enemigo y el jugador
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, jugador.position);
 
         if (distanceToPlayer <= chaseRange)
         {
             isChasing = true;
 
             // Mueve el enemigo hacia el jugador
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
+            Vector2 direction = (jugador.position - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, speed * Time.deltaTime);
         }
 
         else
@@ -60,7 +85,12 @@ public class BatXplode : MonoBehaviour
 
         }
 
+        if (playerDetected && Input.GetKeyDown("space"))
+        {
+            counterShot = true;
+        }
 
+        PerformDetect();
 
     }
 
@@ -75,7 +105,7 @@ public class BatXplode : MonoBehaviour
         speed = 0;
         // daño al jugador xd
         PlayerStats playerLife = player.GetComponent<PlayerStats>();
-        if (player != null)
+        if (player != null && !counterShot)
         {
             playerLife.TakeDamage(-20f);
         }
@@ -84,12 +114,30 @@ public class BatXplode : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.49f);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 15f);
-        Gizmos.DrawWireSphere(transform.position, 4f);
+        Gizmos.DrawWireSphere(transform.position, 1.3f);
     }
+
+    public void PerformDetect()
+    {
+        Collider2D collider = Physics2D.OverlapCircle((Vector2)detectorOrigin.position, radius, detectorLayerMask);
+        if (collider != null)
+        {
+            Player = collider.gameObject;
+        }
+        else
+        {
+            Player = null;
+        }
+    }
+
+
+   
+
+
 }

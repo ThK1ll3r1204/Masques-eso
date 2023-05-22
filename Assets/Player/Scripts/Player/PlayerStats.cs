@@ -6,15 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+
+
     [SerializeField] public float _pLife = 100f;
     public bool enemyKilled;
     public bool isDead;
     public float _calcio;
 
+    
+
     private void Start()
     {
         enemyKilled = false;
     }
+    
 
     void Update()
     {
@@ -30,10 +35,8 @@ public class PlayerStats : MonoBehaviour
             enemyKilled = false;
         }
 
-        if (_pLife <= 0f && !isDead)
-        {
-            Die();
-        }
+       
+
     }
 
     public void TakeDamage(float damage)
@@ -44,6 +47,8 @@ public class PlayerStats : MonoBehaviour
         {
             Die();
         }
+
+       
     }
     public void Die()
     {
@@ -52,4 +57,6 @@ public class PlayerStats : MonoBehaviour
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
     }
+
+    
 }
