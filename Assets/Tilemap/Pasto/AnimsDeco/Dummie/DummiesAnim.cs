@@ -6,6 +6,9 @@ public class DummiesAnim : MonoBehaviour
 {
     [SerializeField] Animator _anim;
 
+    float life =100f;
+    bool ChangeLife = false;
+
     void Start()
     {
         _anim = GetComponent<Animator>();
@@ -16,11 +19,23 @@ public class DummiesAnim : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            //_anim.SetBool("damage",true);
-            _anim.Play(2);
+            life--;
+            ChangeLife = true;
+            if (ChangeLife)
+            {
+                _anim.SetBool("damage", true);
+            }
+           
+            else 
+            {
+                ChangeLife = false;
+                _anim.SetBool("damage", false);
+            }
+            
         }
         
        
     }
+
 
 }
