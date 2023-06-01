@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-
+        
         if (timer <= 0 && _canSpawn)
         {
             GameObject Goblins = Instantiate(goblins, transform.position, Quaternion.identity);

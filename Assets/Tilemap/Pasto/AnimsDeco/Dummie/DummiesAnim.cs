@@ -4,34 +4,29 @@ using UnityEngine;
 
 public class DummiesAnim : MonoBehaviour
 {
-    [SerializeField] Animator _anim;
+    //Piero
 
-    float life =100f;
-    bool ChangeLife = false;
+
+    public Animator _anim;
+
 
     void Start()
     {
+        //Pone el animator automaticamente en el inspector
         _anim = GetComponent<Animator>();
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        //Detecta collision con PlayerBullet
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            life--;
-            ChangeLife = true;
-            if (ChangeLife)
-            {
-                _anim.SetBool("damage", true);
-            }
-           
-            else 
-            {
-                ChangeLife = false;
-                _anim.SetBool("damage", false);
-            }
             
+            // Ejecuta la animación
+            _anim.SetTrigger("golpeao");
+            Debug.Log("caca");
         }
         
        

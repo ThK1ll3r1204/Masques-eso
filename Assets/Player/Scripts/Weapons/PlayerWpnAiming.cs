@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerWpnAiming : MonoBehaviour
 {
+    //Fabri
+
     public GameObject thisGun;
     public GameObject pCorpse;
 

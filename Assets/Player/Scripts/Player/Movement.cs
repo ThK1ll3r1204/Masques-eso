@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    //Jose
+
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] float _speed;
     public bool isWalking = true;
