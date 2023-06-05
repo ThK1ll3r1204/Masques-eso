@@ -94,7 +94,7 @@ public class BatClaps : MonoBehaviour
 
         anim.SetBool("Shoot", true);
         // Disparar en las cuatro diagonales
-        Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+        Vector2[] directions = { new Vector2(1, 1), new Vector2(-1, -1), new Vector2(1, -1), new Vector2(-1,1) };
 
         foreach (Vector2 direction in directions)
         {
