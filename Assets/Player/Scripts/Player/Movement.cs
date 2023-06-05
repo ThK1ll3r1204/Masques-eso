@@ -5,8 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     //Jose
-
-    [SerializeField] Rigidbody2D _rb;
+    public Collider2D _coll;
+    public Rigidbody2D _rb;
     [SerializeField] float _speed;
     public bool isWalking = true;
 
@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _coll = GetComponent<Collider2D>();
         pStats = this.GetComponent<PlayerStats>();
     }
 
@@ -33,8 +34,7 @@ public class Movement : MonoBehaviour
             else
                 isWalking = false;
 
-            if (pStats.isDead)
-                _rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            
 
         }
     }

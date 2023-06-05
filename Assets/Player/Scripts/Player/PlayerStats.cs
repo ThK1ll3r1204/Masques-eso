@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     //Luis
-
+    [SerializeField] Movement pMov;
     [SerializeField] public float _pLife;
     public bool enemyKilled;
     public bool isDead;
@@ -17,7 +18,10 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+
+        pMov = GetComponent<Movement>();
         _pLife = 100f;
+        _calcio = 100f;
         enemyKilled = false;
     }
     
@@ -53,10 +57,13 @@ public class PlayerStats : MonoBehaviour
     }
     public void Die()
     {
+        pMov._rb.simulated = false;
+        //pMov._coll.enabled = false;
         //Efectivamente murio
         Debug.Log("Muerto");
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
+        
     }
 
     

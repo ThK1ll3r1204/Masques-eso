@@ -68,7 +68,7 @@ Transform:
   m_Children:
   - {fileID: 7200413476181911186}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6141735079243350029
 SpriteRenderer:
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439a4390aa006c440899944e4f11f067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coll: {fileID: 0}
   _rb: {fileID: 0}
   _speed: 7
   isWalking: 1
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2574acd3ae1ce4582deef9b274b0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pMov: {fileID: 0}
   _pLife: 100
   enemyKilled: 0
   isDead: 0
