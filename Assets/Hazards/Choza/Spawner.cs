@@ -9,11 +9,15 @@ public class Spawner : MonoBehaviour
     [SerializeField] float _sLife;
     [SerializeField] Animator _anim;
 
-    [SerializeField] bool _canSpawn=true;
+    [SerializeField] bool _canSpawn = true;
 
     [SerializeField] GameObject goblins;
-    float timer;
+    [SerializeField] float timer;
     [SerializeField] float timermax;
+
+    [SerializeField] LayerMask playerLayer;
+    [SerializeField] float radius;
+
 
     void Start()
     {
@@ -23,16 +27,24 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
-        
-        if (timer <= 0 && _canSpawn)
+        _canSpawn = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+
+        if (_canSpawn)
         {
-            GameObject Goblins = Instantiate(goblins, transform.position, Quaternion.identity);
-            timer = timermax;
-        }
-        else if(_sLife <= 0) 
-        {
-            _canSpawn = false;
+            _canSpawn = true;
+
+            timer -= Time.deltaTime;
+
+            if (timer <= 0 && _canSpawn)
+            {
+                GameObject Goblins = Instantiate(goblins, transform.position, Quaternion.identity);
+                timer = timermax;
+            }
+            else if (_sLife <= 0)
+            {
+                _canSpawn = false;
+                radius = 0;
+            }
         }
 
         if(_sLife <= 150)
@@ -62,6 +74,11 @@ public class Spawner : MonoBehaviour
     {
         _sLife += value;
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
 }

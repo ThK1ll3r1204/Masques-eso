@@ -80,6 +80,12 @@ public class GenericProyectile : MonoBehaviour
         //Calcula el daño que hara gracias a la cantidad de calcio
         float finalDamage = damage / (pStats._calcio / 115f);
         pStats._pLife -= finalDamage;
+
+        if(pStats._pLife <= 0)
+        {
+            pStats.Die();
+        }
+
     }
 
     private void OnDrawGizmos()
