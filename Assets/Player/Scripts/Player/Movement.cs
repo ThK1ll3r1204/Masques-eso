@@ -32,6 +32,10 @@ public class Movement : MonoBehaviour
                 isWalking = true;
             else
                 isWalking = false;
+
+            if (pStats.isDead)
+                _rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
         }
     }
 }

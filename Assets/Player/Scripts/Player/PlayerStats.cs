@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     //Luis
 
-    [SerializeField] public float _pLife = 100f;
+    [SerializeField] public float _pLife;
     public bool enemyKilled;
     public bool isDead;
     public float _calcio;
@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        _pLife = 100f;
         enemyKilled = false;
     }
     

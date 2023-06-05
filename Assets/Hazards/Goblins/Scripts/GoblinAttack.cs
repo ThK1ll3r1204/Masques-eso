@@ -36,7 +36,7 @@ public class GoblinAttack : MonoBehaviour
         if (detect.playerDetected && _bCooldowntimer <= 0)
         {
             ShootThePlayer();
-            anim.SetTrigger("Shoot");
+            //anim.SetTrigger("Shoot");
         } 
 
     }

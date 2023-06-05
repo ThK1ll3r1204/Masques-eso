@@ -77,11 +77,11 @@ public class BatXplode : MonoBehaviour
 
             if (xplodeTimer >= maxXplodeTimer)
             {
-                anim.SetBool("Boom", true);
-
+                anim.SetBool("PreBoom", true);
+                
                 Explode();
             }
-            else { anim.SetBool("Boom", false); }
+            else { anim.SetBool("PreBoom", false); }
 
         }
 
@@ -103,6 +103,13 @@ public class BatXplode : MonoBehaviour
 
         hasExploded = true;
         speed = 0;
+
+        // Instanciar la explosión
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        anim.SetBool("PreBoom", false);
+        anim.SetBool("Boom", true);
+
         // daño al jugador xd
         PlayerStats playerLife = player.GetComponent<PlayerStats>();
         if (player != null && !counterShot)
@@ -110,17 +117,15 @@ public class BatXplode : MonoBehaviour
             playerLife.TakeDamage(-20f);
         }
 
-        // Instanciar la explosión
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
 
-
-        Destroy(gameObject, 0.49f);
+        Destroy(gameObject, 1f);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 15f);
-        Gizmos.DrawWireSphere(transform.position, 1.3f);
+        Gizmos.DrawWireSphere(transform.position, 2f);
     }
 
     public void PerformDetect()
