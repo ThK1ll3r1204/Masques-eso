@@ -20,8 +20,6 @@ public class BatXplode : MonoBehaviour
 
     [SerializeField] bool isChasing = false;
 
-
-
     public Transform detectorOrigin;
     public float radius;
     public LayerMask detectorLayerMask;
@@ -29,7 +27,6 @@ public class BatXplode : MonoBehaviour
 
 
     public bool playerDetected { get; private set; }
-
 
     void Start()
     {

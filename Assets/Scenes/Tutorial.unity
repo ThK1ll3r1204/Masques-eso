@@ -20604,11 +20604,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.35
+      value: -8.17
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.87
+      value: -12.01
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21426,6 +21426,7 @@ GameObject:
   - component: {fileID: 1106364184}
   - component: {fileID: 1106364183}
   - component: {fileID: 1106364182}
+  - component: {fileID: 1106364185}
   m_Layer: 0
   m_Name: Pozo_Bucket_0
   m_TagString: Untagged
@@ -21521,6 +21522,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1106364185
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106364181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.625, y: 3}
+    newSize: {x: 3.625, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.7917557, y: -0.17747211}
+      - {x: 1.4333382, y: 0.08133507}
+      - {x: 1.0868378, y: 0.5596819}
+      - {x: -0.21699715, y: 0.6718426}
+      - {x: -1.3180017, y: 0.6658459}
+      - {x: -1.4885626, y: 0.028760433}
+      - {x: -1.6153364, y: -0.19899797}
+      - {x: -1.8770199, y: -0.5348077}
+      - {x: -1.7592449, y: -0.82941675}
+      - {x: -1.6001701, y: -1.1493378}
+      - {x: -1.3501701, y: -1.3635025}
+      - {x: -0.9606848, y: -1.4446774}
+      - {x: 0.52456474, y: -1.4544592}
+      - {x: 1.0078297, y: -1.2725039}
+      - {x: 1.3855124, y: -1.0909476}
+      - {x: 1.4604425, y: -0.89604235}
+      - {x: 1.4885025, y: -0.5013418}
+      - {x: 1.7215014, y: -0.5243373}
+    - - {x: -0.9563341, y: 0.6190052}
+      - {x: -0.89383507, y: 0.54684114}
+      - {x: -0.375, y: 0.5}
+      - {x: -0.875, y: 0.5}
+      - {x: -1.0625, y: 0.375}
+    - - {x: 0.6875, y: 0.4375}
+      - {x: 0.625, y: 0.5}
+      - {x: 0.125, y: 0.5}
+      - {x: 0.17542553, y: 0.60316515}
+      - {x: 0.6219082, y: 0.5878043}
+      - {x: 0.69664, y: 0.5162411}
+      - {x: 0.802454, y: 0.57477}
+      - {x: 0.875, y: 0.375}
+      - {x: 0.8125, y: 0.4375}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1138503862
 GameObject:
   m_ObjectHideFlags: 0
