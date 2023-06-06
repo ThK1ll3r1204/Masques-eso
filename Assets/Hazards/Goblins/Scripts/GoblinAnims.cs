@@ -21,7 +21,8 @@ public class GoblinAnims : MonoBehaviour
 
     void Update()
     {
-        /*anim.SetFloat("x", pAim.AimCordFromPlayer.x);
+        /*
+        anim.SetFloat("x", pAim.AimCordFromPlayer.x);
         anim.SetFloat("y", pAim.AimCordFromPlayer.y);
 
         //Detecta si el jugador apunta a la derecha o izquierda
