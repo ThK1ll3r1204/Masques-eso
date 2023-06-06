@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 866634456197416475}
   - component: {fileID: 8746287373850536007}
   - component: {fileID: 8895576742940960350}
+  - component: {fileID: 123209885558017729}
   m_Layer: 0
   m_Name: Goblins
   m_TagString: Enemy
@@ -156,7 +157,7 @@ MonoBehaviour:
     m_Bits: 8
   debugIdleColor: {r: 1, g: 0, b: 0, a: 0.2627451}
   debugDetectedColor: {r: 0, g: 1, b: 0, a: 0.21176471}
-  showGizmos: 1
+  showGizmos: 0
 --- !u!114 &866634456197416475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +229,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.03755158, y: 0.006258607}
   m_Size: {x: 0.9986228, y: 1.7246215}
   m_Direction: 0
+--- !u!95 &123209885558017729
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109163002268716551}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2561915835a5c7046bf851dd6c154197, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

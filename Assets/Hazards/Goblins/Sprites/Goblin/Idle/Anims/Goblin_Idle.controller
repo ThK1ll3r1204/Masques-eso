@@ -9,7 +9,7 @@ BlendTree:
   m_Name: Idle tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 25c31812dfbd19747a4a15e72cfd5165, type: 2}
+    m_Motion: {fileID: 7400000, guid: 59ac8afd44f71754da32531a727a5724, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -10}
     m_TimeScale: 1
@@ -17,7 +17,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0e08b97e2a1f930409155490f3edd2fa, type: 2}
+    m_Motion: {fileID: 7400000, guid: 88a5325d294a66244befeaa5194bd449, type: 2}
     m_Threshold: 0.14285715
     m_Position: {x: 0, y: 10}
     m_TimeScale: 1
@@ -33,7 +33,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: bba2652ebfe8be141b82aba533e7930b, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5217ba06c94c9fd4ba7a4fdd72c6ba03, type: 2}
     m_Threshold: 0.42857143
     m_Position: {x: 7.5, y: -7.5}
     m_TimeScale: 1
@@ -41,7 +41,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d7407bca3ccd08c449d8b7e8e6c27b05, type: 2}
+    m_Motion: {fileID: 7400000, guid: 48ba82facedf0334e8b057eed771404c, type: 2}
     m_Threshold: 0.5714286
     m_Position: {x: 7.5, y: 7.5}
     m_TimeScale: 1
@@ -49,7 +49,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: bba2652ebfe8be141b82aba533e7930b, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5217ba06c94c9fd4ba7a4fdd72c6ba03, type: 2}
     m_Threshold: 0.71428573
     m_Position: {x: -7.5, y: -7.5}
     m_TimeScale: 1
@@ -57,7 +57,7 @@ BlendTree:
     m_DirectBlendParameter: x
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d7407bca3ccd08c449d8b7e8e6c27b05, type: 2}
+    m_Motion: {fileID: 7400000, guid: 88a5325d294a66244befeaa5194bd449, type: 2}
     m_Threshold: 0.85714287
     m_Position: {x: -7.5, y: 7.5}
     m_TimeScale: 1
@@ -65,7 +65,7 @@ BlendTree:
     m_DirectBlendParameter: x
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2ce8231edf9d9b849a9eb2b0788799a6, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5c242165498bc1048bbe6b6ad9835369, type: 2}
     m_Threshold: 1
     m_Position: {x: -10, y: 0}
     m_TimeScale: 1
@@ -273,7 +273,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Prota_Idle_0
+  m_Name: Goblin_Idle
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: x

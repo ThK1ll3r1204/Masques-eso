@@ -40,7 +40,6 @@ public class GoblinDetect : MonoBehaviour
         {
             player = value;
             playerOnZone = player != null;
-
         }
     }
 

@@ -26,10 +26,16 @@ public class EnemiesLife : MonoBehaviour
     {
         if (life <= 0)
         {
-            pStats.enemyKilled = true;
-            Destroy(this.gameObject);
+            Die();
         }
     }
+
+    public void Die()
+    {
+        pStats.enemyKilled = true;
+        Destroy(this.gameObject);
+    }
+
     void BeingDamaged(float damage)
     {
         life -= damage;
