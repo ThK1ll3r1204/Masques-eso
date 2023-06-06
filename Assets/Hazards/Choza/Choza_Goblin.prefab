@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7955394193419235545}
   - component: {fileID: 3634982792168904379}
   - component: {fileID: 4192692552767802535}
-  - component: {fileID: 8406856046401618320}
-  m_Layer: 0
+  - component: {fileID: 2054902701118876893}
+  m_Layer: 6
   m_Name: Choza_Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   radius: 16
---- !u!58 &8406856046401618320
-CircleCollider2D:
+--- !u!61 &2054902701118876893
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,6 +162,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.022461891, y: -0.42116022}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 3.875}
+    newSize: {x: 4, y: 3.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 2
+  m_Size: {x: 3.775381, y: 1.8646641}
+  m_EdgeRadius: 0
