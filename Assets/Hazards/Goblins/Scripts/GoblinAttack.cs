@@ -8,11 +8,14 @@ public class GoblinAttack : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject goblinRock;
     [SerializeField] public float moveSpeed;
-    [SerializeField] public Animator anim;
 
     [SerializeField] float _bSpeed;
     [SerializeField] float _bCooldown;
     private float _bCooldowntimer;
+
+    public bool isAttacking;
+    public bool isChasing;
+    [SerializeField] float aTimer;
 
     private float distance;
 
@@ -27,16 +30,23 @@ public class GoblinAttack : MonoBehaviour
 
     void Update()
     {
-        if (detect.playerDetected && detect.distanceToPlayer > 5f)
+        if (detect.playerDetected && detect.distanceToPlayer > 5f && aTimer > 0.75f)
         {
             distance = Vector2.Distance(transform.position, player.transform.position);
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            isChasing = true;
         }
+        else
+            isChasing = false;
 
         if (detect.playerDetected && _bCooldowntimer <= 0)
         {
             ShootThePlayer();
-        } 
+        }
+
+        if (detect.playerDetected && _bCooldowntimer <= 0.25f)
+            isAttacking = true;
+
     }
     private void FixedUpdate()
     {
@@ -44,6 +54,16 @@ public class GoblinAttack : MonoBehaviour
         if (_bCooldowntimer > 0f)
         {
             _bCooldowntimer -= Time.deltaTime;
+        }
+
+        if (isAttacking && aTimer < 0.8f)
+        { 
+            aTimer += Time.deltaTime;
+        }
+
+        if (aTimer > 0.75f)
+        {
+            isAttacking = false;   
         }
     }
 
@@ -56,5 +76,6 @@ public class GoblinAttack : MonoBehaviour
         bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * _bSpeed;
         _bCooldowntimer = _bCooldown;
+        aTimer = 0;
     } 
 }

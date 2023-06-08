@@ -65,8 +65,6 @@ public class PatroleMovement : MonoBehaviour
 
 
 
-   
-
     void Move(float lookAt)
     {
         if(!goblinDetect.playerFocused)

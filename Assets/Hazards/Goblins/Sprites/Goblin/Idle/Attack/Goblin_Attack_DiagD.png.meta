@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee2cd79df61981242bef43703e2a866c
+guid: 2190454ce1f1b2c4fa9aaf0da146ccf4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin_IdleU_0
+      name: Goblin_Attack_DiagD_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 374f4cc5741a9be49b164825640d5da1
-      internalID: 91679891
+      spriteID: c5c3144501de5ab4e8f9e2fa4797149d
+      internalID: 1396144494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_IdleU_1
+      name: Goblin_Attack_DiagD_1
       rect:
         serializedVersion: 2
         x: 32
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c2af4be640430e46ae6f09642b25502
-      internalID: -1887741647
+      spriteID: bbd60da19ea858d4eb27c5bff8fcbc71
+      internalID: -585259089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_IdleU_2
+      name: Goblin_Attack_DiagD_2
       rect:
         serializedVersion: 2
         x: 64
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 855dd471d87433c47ad8fae646c79e0e
-      internalID: -462332614
+      spriteID: 80a0e11f641a1814bb3ffa204463929d
+      internalID: 534954701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_IdleU_3
+      name: Goblin_Attack_DiagD_3
       rect:
         serializedVersion: 2
         x: 96
@@ -184,8 +184,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 462104ed4332ad543b144261c4d647aa
-      internalID: -709685701
+      spriteID: 63c4ea03c456bd541b38eacf9ba9c374
+      internalID: 421686662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Attack_DiagD_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02652b83ac56e5c4883b37deb688d780
+      internalID: 1710166921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Attack_DiagD_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2743fdd5301080348a68006a57e4d393
+      internalID: -820761460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Attack_DiagD_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d9c857d3874ac49957b6fcdb988242
+      internalID: 1547190463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Attack_DiagD_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b309aacef1dd1ae489ed0a4939c5736c
+      internalID: -1716073845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Attack_DiagD_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d55e25e39f4cca49aa61ee571488303
+      internalID: -115211445
       vertices: []
       indices: 
       edges: []
@@ -201,10 +306,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin_IdleU_0: 91679891
-      Goblin_IdleU_1: -1887741647
-      Goblin_IdleU_2: -462332614
-      Goblin_IdleU_3: -709685701
+      Goblin_Attack_DiagD_0: 1396144494
+      Goblin_Attack_DiagD_1: -585259089
+      Goblin_Attack_DiagD_2: 534954701
+      Goblin_Attack_DiagD_3: 421686662
+      Goblin_Attack_DiagD_4: 1710166921
+      Goblin_Attack_DiagD_5: -820761460
+      Goblin_Attack_DiagD_6: 1547190463
+      Goblin_Attack_DiagD_7: -1716073845
+      Goblin_Attack_DiagD_8: -115211445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

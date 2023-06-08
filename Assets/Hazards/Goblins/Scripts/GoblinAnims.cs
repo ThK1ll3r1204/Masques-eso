@@ -9,6 +9,8 @@ public class GoblinAnims : MonoBehaviour
     [SerializeField] Transform pTrans;
     [SerializeField] EnemiesLife eLife;
     [SerializeField] PatroleMovement GMov;
+    [SerializeField] GoblinAttack gAttack;
+    [SerializeField] Rigidbody2D gRgbd;
     [SerializeField] Vector3 SeeCordFromPlayer;
 
     void Start()
@@ -17,7 +19,9 @@ public class GoblinAnims : MonoBehaviour
         pSprite = GetComponent<SpriteRenderer>();
         eLife = GetComponent<EnemiesLife>();
         GMov = GetComponent<PatroleMovement>();
-        pTrans= GameObject.Find("Player").GetComponent<Transform>();
+        gAttack = GetComponent<GoblinAttack>();
+        gRgbd = GetComponent<Rigidbody2D>();
+        pTrans = GameObject.Find("Player").GetComponent<Transform>();
     }
      
 
@@ -45,10 +49,16 @@ public class GoblinAnims : MonoBehaviour
             pSprite.flipX = false;
         }
 
-        if (GMov.isWalking)
+        if (gAttack.isChasing)
             anim.SetBool("isWalking", true);
         else
             anim.SetBool("isWalking", false);
+
+        if (gAttack.isAttacking)
+            anim.SetBool("isAttacking", true);
+        else
+            anim.SetBool("isAttacking", false);
+
 
         if (eLife.eDie)
             anim.SetTrigger("isDead");
