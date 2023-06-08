@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e99ac25abcdf0d640b934e22f9242b21
+guid: 7940a906b19e76e4780025357bb0227f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin_Death_0
+      name: GoblinWalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a812d3d46246ee4b8e662f8d82c0e65
-      internalID: 1940259499
+      spriteID: 73577405031e9d94ab965cd94f93a202
+      internalID: 1403858485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Death_1
+      name: GoblinWalk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df009d3f12f0c44b9ef2ae940b8dcca
-      internalID: -1668723750
+      spriteID: c1fc302e6a6545c44b8980a883916a6e
+      internalID: 505031494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Death_2
+      name: GoblinWalk_2
       rect:
         serializedVersion: 2
         x: 64
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31ddbc6a1ef31f84abff932dfe5f8871
-      internalID: 1431364667
+      spriteID: 2258f7e01e220234da3dad25487a54c6
+      internalID: -1515854706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Death_3
+      name: GoblinWalk_3
       rect:
         serializedVersion: 2
         x: 96
@@ -184,113 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5d461a01d8c3c04ab4644f8d482b16b
-      internalID: -1497851769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Death_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bc14763b3d50434186816fb0520c06a
-      internalID: 1158887371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Death_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ca1190b043a7b045a3b818de60b81d3
-      internalID: 1520357286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Death_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3940acd8e36313d49b3e808ce0ce3553
-      internalID: -1911127662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Death_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e922a6de5d9729c47933d7b7c3609cc1
-      internalID: -944566244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Death_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6fd4bb3523d69140845582ec0892eba
-      internalID: 389158483
+      spriteID: 11e9a9e3dd870cc49818c4fb3fbb44d1
+      internalID: -1082852602
       vertices: []
       indices: 
       edges: []
@@ -306,15 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin_Death_0: 1940259499
-      Goblin_Death_1: -1668723750
-      Goblin_Death_2: 1431364667
-      Goblin_Death_3: -1497851769
-      Goblin_Death_4: 1158887371
-      Goblin_Death_5: 1520357286
-      Goblin_Death_6: -1911127662
-      Goblin_Death_7: -944566244
-      Goblin_Death_8: 389158483
+      GoblinWalk_0: 1403858485
+      GoblinWalk_1: 505031494
+      GoblinWalk_2: -1515854706
+      GoblinWalk_3: -1082852602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

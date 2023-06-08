@@ -17,10 +17,14 @@ public class PatroleMovement : MonoBehaviour
     float sideToLook;
     float randomSide;
 
+    public bool isWalking = false;
+
     Animator anim;
+    GoblinDetect goblinDetect;
 
     private void Start()
     {
+        goblinDetect = GetComponent<GoblinDetect>();
         maxTimerStay = Random.Range(2, 8);
         maxTimerMove = Random.Range(2, 5);
     }
@@ -46,6 +50,7 @@ public class PatroleMovement : MonoBehaviour
 
                 if (timerMove < maxTimerMove)
                 {
+                    isWalking = true;
                     //anim.SetBool("Walking", true);
                     //anim.SetBool("Idle", false);
                     Move(sideToLook);
@@ -64,15 +69,18 @@ public class PatroleMovement : MonoBehaviour
 
     void Move(float lookAt)
     {
-        if (lookAt < 0)
+        if(!goblinDetect.playerFocused)
         {
-            transform.position += Vector3.left * MoveSpeed * Time.deltaTime;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            transform.position += Vector3.right * MoveSpeed * Time.deltaTime;
-            transform.localScale = new Vector3(1, 1, 1);
+            if (lookAt < 0)
+            {
+                transform.position += Vector3.left * MoveSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                transform.position += Vector3.right * MoveSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
         }
     }
 }

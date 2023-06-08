@@ -36,9 +36,7 @@ public class GoblinAttack : MonoBehaviour
         if (detect.playerDetected && _bCooldowntimer <= 0)
         {
             ShootThePlayer();
-            //anim.SetTrigger("Shoot");
         } 
-
     }
     private void FixedUpdate()
     {
@@ -53,6 +51,7 @@ public class GoblinAttack : MonoBehaviour
     {
         Vector3 direction = player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //anim.SetTrigger("Shoot");
         GameObject bullet = Instantiate(goblinRock, transform.position, Quaternion.identity, this.transform);
         bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * _bSpeed;

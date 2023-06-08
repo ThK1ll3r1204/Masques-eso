@@ -7,6 +7,7 @@ public class EnemiesLife : MonoBehaviour
     [SerializeField] public float life;
     [SerializeField] public PlayerBullet pBullet;
     [SerializeField] public PlayerStats pStats;
+    [SerializeField] public bool eDie = false;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class EnemiesLife : MonoBehaviour
     public void Die()
     {
         pStats.enemyKilled = true;
+        eDie = true;
         Destroy(this.gameObject);
     }
 

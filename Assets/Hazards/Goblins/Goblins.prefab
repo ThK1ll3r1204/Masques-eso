@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8746287373850536007}
   - component: {fileID: 8895576742940960350}
   - component: {fileID: 123209885558017729}
+  - component: {fileID: 4422175617891023394}
   m_Layer: 0
   m_Name: Goblins
   m_TagString: Enemy
@@ -133,6 +134,7 @@ MonoBehaviour:
   life: 100
   pBullet: {fileID: 0}
   pStats: {fileID: 0}
+  eDie: 0
 --- !u!114 &8268224501017418172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +196,7 @@ MonoBehaviour:
   timerMove: 0
   maxTimerMove: 0
   MoveSpeed: 3
+  isWalking: 0
 --- !u!70 &8895576742940960350
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -250,3 +253,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4422175617891023394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109163002268716551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e622fec366c6fa94a9be5bf3eae90429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  pSprite: {fileID: 0}
+  pTrans: {fileID: 0}
+  eLife: {fileID: 0}
+  GMov: {fileID: 0}
+  SeeCordFromPlayer: {x: 0, y: 0, z: 0}

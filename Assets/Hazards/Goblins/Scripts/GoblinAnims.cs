@@ -6,27 +6,35 @@ public class GoblinAnims : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer pSprite;
-    [SerializeField] GameObject pTrans;
+    [SerializeField] Transform pTrans;
+    [SerializeField] EnemiesLife eLife;
+    [SerializeField] PatroleMovement GMov;
     [SerializeField] Vector3 SeeCordFromPlayer;
 
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        pSprite = GetComponent<SpriteRenderer>();
+        eLife = GetComponent<EnemiesLife>();
+        GMov = GetComponent<PatroleMovement>();
+        pTrans= GameObject.Find("Player").GetComponent<Transform>();
     }
-
-    //Vector3 pPosFromGoblin = ;
-    //mPosFromPlayer.z = 0f;
-
-    //    AimCordFromPlayer = mPosFromPlayer - transform.position;
+     
 
     void Update()
     {
-        /*
-        anim.SetFloat("x", pAim.AimCordFromPlayer.x);
-        anim.SetFloat("y", pAim.AimCordFromPlayer.y);
+
+        Vector3 pPosFromGobiln = pTrans.position;
+        pPosFromGobiln.z = 0f;
+
+        SeeCordFromPlayer = pTrans.localPosition - transform.position;
+
+        
+        anim.SetFloat("x", SeeCordFromPlayer.x);
+        anim.SetFloat("y", SeeCordFromPlayer.y);
 
         //Detecta si el jugador apunta a la derecha o izquierda
-        if (pAim.AimCordFromPlayer.x < 0f)
+        if (SeeCordFromPlayer.x < 0f)
         {
             //pTransform.localScale =  Vector3.one + Vector3.left*2;
             pSprite.flipX = true;
@@ -37,14 +45,14 @@ public class GoblinAnims : MonoBehaviour
             pSprite.flipX = false;
         }
 
-        if (pMove.isWalking)
+        if (GMov.isWalking)
             anim.SetBool("isWalking", true);
         else
             anim.SetBool("isWalking", false);
 
-        if (pStats.isDead)
+        if (eLife.eDie)
             anim.SetTrigger("isDead");
-        */
+        
     }
 }
 
