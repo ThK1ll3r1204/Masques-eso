@@ -57,6 +57,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Die()
     {
+        FindObjectOfType<AudioManager>().Play("Muerte");
         pMov._rb.simulated = false;
         //pMov._coll.enabled = false;
         //Efectivamente murio

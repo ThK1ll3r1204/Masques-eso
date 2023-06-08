@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
             {
                 GameObject Goblins = Instantiate(goblins, transform.position, Quaternion.identity);
                 timer = timermax;
+                FindObjectOfType<AudioManager>().Play("Spawn");
             }
             else if (_sLife <= 0)
             {

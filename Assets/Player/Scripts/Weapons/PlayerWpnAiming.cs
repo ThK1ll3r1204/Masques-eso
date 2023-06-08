@@ -79,6 +79,8 @@ public class PlayerWpnAiming : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = AimCordFromPlayer.normalized * _bSpeed;
             _bCooldowntimer = _bCooldown;
             wAnimator.SetTrigger("Shoot");
+
+            FindObjectOfType<AudioManager>().Play("Disparo");
         }
     }
 
