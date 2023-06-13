@@ -45,8 +45,8 @@ public class Explosion : MonoBehaviour
             if (Time.time - lastDamageTime >= damageInterval)
             {
                 // Causar daño al enemigo
-                EnemyLife enemy = other.GetComponent<EnemyLife>();
-                enemy.ChangeLife(-1);
+                EnemiesLife enemy = other.GetComponent<EnemiesLife>();
+                enemy.BeingDamaged(-1);
 
                 // Actualizar el tiempo del último daño aplicado
                 lastDamageTime = Time.time;

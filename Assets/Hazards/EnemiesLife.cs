@@ -38,7 +38,7 @@ public class EnemiesLife : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void BeingDamaged(float damage)
+    public void BeingDamaged(float damage)
     {
         life -= damage;
     }
