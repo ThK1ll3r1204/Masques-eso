@@ -110,18 +110,18 @@ TextureImporter:
       name: Bow_Shoot_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 7
-        width: 21
-        height: 18
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb285f58c36bbfe48b561af599187075
+      spriteID: d1c1a781ccba7b242af875a4982e6b99
       internalID: 1982270118
       vertices: []
       indices: 
@@ -131,18 +131,18 @@ TextureImporter:
       name: Bow_Shoot_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 7
-        width: 34
-        height: 18
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f74642de0e98b8b4c9a2a3cbbbb6060b
+      spriteID: 81a8ff9ff689da04f939aec6f62bf145
       internalID: -1947215916
       vertices: []
       indices: 
@@ -152,18 +152,18 @@ TextureImporter:
       name: Bow_Shoot_2
       rect:
         serializedVersion: 2
-        x: 78
-        y: 7
-        width: 9
-        height: 18
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7d0ad2a9124f5145a44e5311099835a
+      spriteID: fe4c94444b6c38d4cadda92df3454c96
       internalID: 1655054467
       vertices: []
       indices: 
@@ -173,18 +173,18 @@ TextureImporter:
       name: Bow_Shoot_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 7
-        width: 18
-        height: 19
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f1cee376db5f644941b84609467b70
+      spriteID: 322531d1325369a4b9c45123dc32f58e
       internalID: -670698348
       vertices: []
       indices: 
@@ -194,18 +194,18 @@ TextureImporter:
       name: Bow_Shoot_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 9
-        width: 15
-        height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05eb5995bc19c8543a779406e085877b
+      spriteID: 0b895c8d8659a8e4987af6e56d43520b
       internalID: -1003319806
       vertices: []
       indices: 
@@ -215,18 +215,18 @@ TextureImporter:
       name: Bow_Shoot_5
       rect:
         serializedVersion: 2
-        x: 170
-        y: 9
-        width: 15
-        height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6445c13accf7f0f44a5ecfe2618b3ae1
+      spriteID: 057baf82dbf4db64e9c918456e0ef4f4
       internalID: 1428626928
       vertices: []
       indices: 
@@ -236,18 +236,18 @@ TextureImporter:
       name: Bow_Shoot_6
       rect:
         serializedVersion: 2
-        x: 200
-        y: 9
-        width: 17
-        height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.673, y: 0.515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87ae2885d051b6047bb74386cc10a7f6
+      spriteID: a6e0c89a03efa1c409144dfba17cfda1
       internalID: -364031710
       vertices: []
       indices: 

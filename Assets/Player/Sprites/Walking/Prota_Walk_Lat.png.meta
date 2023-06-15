@@ -110,10 +110,10 @@ TextureImporter:
       name: Prota_Walk_Lat_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 13
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Prota_Walk_Lat_1
       rect:
         serializedVersion: 2
-        x: 41
+        x: 32
         y: 0
-        width: 13
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Prota_Walk_Lat_2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 64
         y: 0
-        width: 13
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,6 +165,27 @@ TextureImporter:
       bones: []
       spriteID: 6d56ef8049157e24cbaa99732b4dbcc2
       internalID: -610786092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota_Walk_Lat_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28e8e0b3cde6454c8d941da5476d7eb
+      internalID: 1402812659
       vertices: []
       indices: 
       edges: []
@@ -183,6 +204,7 @@ TextureImporter:
       Prota_Walk_Lat_0: -394726372
       Prota_Walk_Lat_1: -404848513
       Prota_Walk_Lat_2: -610786092
+      Prota_Walk_Lat_3: 1402812659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

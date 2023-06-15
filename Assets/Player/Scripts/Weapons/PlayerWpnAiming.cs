@@ -52,20 +52,43 @@ public class PlayerWpnAiming : MonoBehaviour
             wSprite.flipY = true;
         }
 
+
+
         if (AimCordFromPlayer.y < 0f)
         {
             if (AimingRight)
-            thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.114f + Vector3.left * 0.522f;
+            {
+                if (AimCordFromPlayer.x < 2.5f && AimCordFromPlayer.y > 2.5f)
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.263f + Vector3.right * 0.277f;
+                else
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.679f + Vector3.right * 0.198f;
+            }
             else
-            thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.114f + Vector3.right * 0.522f;
+            {
+                if (AimCordFromPlayer.x < -2.5f)
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.263f + Vector3.left * 0.277f;
+                else
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.down * 0.679f + Vector3.left * 0.198f;
+            }
+
             wSprite.sortingOrder = 3;
         }
         else
         {
-            if(AimingRight)
-            thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.114f + Vector3.left * 0.522f; 
+            if (AimingRight)
+            {
+                if (AimCordFromPlayer.x < 2.5f)
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.129f + Vector3.right * 0.51f;
+                else
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.129f + Vector3.right * 0.19f;
+            }
             else
-            thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.114f + Vector3.right * 0.522f;
+            {
+                if (AimCordFromPlayer.x < -2.5f)
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.129f + Vector3.left * 0.51f;
+                else
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.129f + Vector3.left * 0.19f;
+            }
             wSprite.sortingOrder = 1;
         }
 
