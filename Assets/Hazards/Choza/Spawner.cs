@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] bool _canSpawn = true;
 
+    [SerializeField] Transform firePoint;
+
     [SerializeField] GameObject goblins;
     [SerializeField] float timer;
     [SerializeField] float timermax;
@@ -22,6 +24,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         _anim = GetComponent<Animator>();
+        
         _sLife = 300f;
     }
 
@@ -37,7 +40,7 @@ public class Spawner : MonoBehaviour
 
             if (timer <= 0 && _canSpawn)
             {
-                GameObject Goblins = Instantiate(goblins, transform.position, Quaternion.identity);
+                GameObject Goblins = Instantiate(goblins, firePoint.transform.position, Quaternion.identity);
                 timer = timermax;
                 FindObjectOfType<AudioManager>().Play("Spawn");
             }
