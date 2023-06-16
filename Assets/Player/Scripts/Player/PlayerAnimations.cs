@@ -13,7 +13,6 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Awake()
     {
-        pAim = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAiming>();
         anim = this.GetComponent<Animator>();
         pSprite = this.GetComponent<SpriteRenderer>();
         pTransform = this.GetComponent<Transform>();
@@ -23,6 +22,8 @@ public class PlayerAnimations : MonoBehaviour
 
     void Update()
     {
+        pAim = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAiming>();
+
         anim.SetFloat("x", pAim.AimCordFromPlayer.x);
         anim.SetFloat("y", pAim.AimCordFromPlayer.y);
 

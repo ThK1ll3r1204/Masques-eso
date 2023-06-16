@@ -14,7 +14,10 @@ public class PlayerStats : MonoBehaviour
     public bool isDead;
     public float _calcio;
 
-    
+    [SerializeField] GameObject bow;
+    [SerializeField] GameObject fireWand;
+
+    public bool wpnIsBow;
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class PlayerStats : MonoBehaviour
         _pLife = 100f;
         _calcio = 100f;
         enemyKilled = false;
+        wpnIsBow = true;
     }
     
 
@@ -40,6 +44,24 @@ public class PlayerStats : MonoBehaviour
             enemyKilled = false;
         }
 
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            if (!wpnIsBow)
+                wpnIsBow = true;
+            else
+                wpnIsBow = false;
+        }
+
+        if(wpnIsBow)
+        {
+            bow.SetActive(true);
+            fireWand.SetActive(false);
+        }
+        else
+        {
+            bow.SetActive(false);
+            fireWand.SetActive(true);
+        }
        
 
     }
