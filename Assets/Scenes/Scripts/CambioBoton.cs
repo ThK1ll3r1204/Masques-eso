@@ -15,6 +15,14 @@ public class CambioBoton : MonoBehaviour
         button.onClick.AddListener(ChangeSceneXindex);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
+    }
+
     public void ChangeSceneXindex()
     {
         SceneManager.LoadScene(sceneIndex);

@@ -70,6 +70,7 @@ public class Spawner : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             ChangeLife(-30f);
+            _anim.SetTrigger("Hurt");
         }
     }
 

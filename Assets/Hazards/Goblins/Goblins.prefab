@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 688308747
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1179862795, guid: 1d47c7ae663fb0e4fb59b7b501357d06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   _bSpeed: 6
   _bCooldown: 2.5
   isAttacking: 0
+  isChasing: 0
   aTimer: 0
 --- !u!114 &8746287373850536007
 MonoBehaviour:
@@ -245,6 +246,7 @@ MonoBehaviour:
   eLife: {fileID: 0}
   GMov: {fileID: 0}
   gAttack: {fileID: 0}
+  gRgbd: {fileID: 0}
   SeeCordFromPlayer: {x: 0, y: 0, z: 0}
 --- !u!50 &2179754737694419051
 Rigidbody2D:

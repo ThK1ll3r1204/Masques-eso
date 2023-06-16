@@ -86,7 +86,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Muerto");
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
-        
+        SceneManager.LoadScene(4);
     }
 
     

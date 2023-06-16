@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7200339434672258792}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7955394193419235545
 SpriteRenderer:
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 480265487
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: 688308747
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: -670017820, guid: defa49265fe225d439030a055b473142, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   _sLife: 0
   _anim: {fileID: 0}
   _canSpawn: 1
+  firePoint: {fileID: 7200339434672258792}
   goblins: {fileID: 2109163002268716551, guid: 6b1fde6302fb78a489d260eaf20ab3af, type: 3}
   timer: 0
   timermax: 8
