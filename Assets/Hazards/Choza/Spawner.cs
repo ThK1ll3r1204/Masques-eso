@@ -6,25 +6,28 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    [SerializeField] float _sLife;
+    public float _sLife;
     [SerializeField] Animator _anim;
 
-    [SerializeField] bool _canSpawn = true;
+    public bool _canSpawn = true;
 
     [SerializeField] Transform firePoint;
 
     [SerializeField] GameObject goblins;
-    [SerializeField] float timer;
+    public float timer;
     [SerializeField] float timermax;
+
+    public bool dead;
+    public bool takeDamage;
 
     [SerializeField] LayerMask playerLayer;
     [SerializeField] float radius;
 
 
-    void Start()
+    void Awake()
     {
         _anim = GetComponent<Animator>();
-        
+        dead = false;
         _sLife = 300f;
     }
 
@@ -70,12 +73,11 @@ public class Spawner : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             ChangeLife(-30f);
-            _anim.SetTrigger("Hurt");
         }
     }
 
 
-    void ChangeLife(float value)
+    public void ChangeLife(float value)
     {
         _sLife += value;
 
