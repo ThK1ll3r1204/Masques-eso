@@ -132,7 +132,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  radius: 15.4
+  radius: 36.3
 --- !u!50 &536375837530906600
 Rigidbody2D:
   serializedVersion: 4
