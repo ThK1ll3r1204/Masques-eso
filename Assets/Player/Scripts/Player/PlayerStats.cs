@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PlayerStats : MonoBehaviour
@@ -18,13 +19,21 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject fireWand;
 
     public bool wpnIsBow;
+    public float currentlife;
+    public Lifebar lifebar;
+    public Calbar calbar;
+    public float currentcal;
 
     private void Start()
     {
 
         pMov = GetComponent<Movement>();
         _pLife = 100f;
+        currentlife = _pLife;
+        lifebar.SetMaxLife(_pLife);
         _calcio = 100f;
+        currentcal = _calcio;
+        calbar.SetMaxCalcio(_calcio);
         enemyKilled = false;
         wpnIsBow = true;
     }
@@ -62,7 +71,8 @@ public class PlayerStats : MonoBehaviour
             bow.SetActive(false);
             fireWand.SetActive(true);
         }
-       
+        currentcal = _calcio;
+        calbar.SetCalcio(currentcal);
 
     }
 
@@ -75,7 +85,6 @@ public class PlayerStats : MonoBehaviour
             Die();
         }
 
-       
     }
     public void Die()
     {
@@ -87,6 +96,12 @@ public class PlayerStats : MonoBehaviour
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
         SceneManager.LoadScene(4);
+    }
+
+    private void FixedUpdate()
+    {
+        currentlife = _pLife;
+        lifebar.Setlife(currentlife);
     }
 
     
