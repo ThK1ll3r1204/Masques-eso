@@ -24,12 +24,17 @@ public class PlayerAnimations : MonoBehaviour
     void Update()
     {
         pAim = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAiming>();
-
-        anim.SetFloat("x", pAim.AimCordFromPlayer.x);
-        anim.SetFloat("y", pAim.AimCordFromPlayer.y);
-
-        anim.SetFloat("x", pAimB.AimCordFromPlayer.x);
-        anim.SetFloat("y", pAimB.AimCordFromPlayer.y);
+        pAimB = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAimingB>();
+        if (pStats.wpnIsBow)
+        {
+            anim.SetFloat("x", pAim.AimCordFromPlayer.x);
+            anim.SetFloat("y", pAim.AimCordFromPlayer.y);
+        }
+        else
+        {
+            anim.SetFloat("x", pAimB.AimCordFromPlayer.x);
+            anim.SetFloat("y", pAimB.AimCordFromPlayer.y);
+        }
 
         //Detecta si el jugador apunta a la derecha o izquierda
         if (pAim.AimCordFromPlayer.x < 0f)
