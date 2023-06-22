@@ -221,6 +221,10 @@ MonoBehaviour:
   bow: {fileID: 7492143038720159327}
   fireWand: {fileID: 4122696806439572975}
   wpnIsBow: 0
+  currentlife: 0
+  lifebar: {fileID: 0}
+  calbar: {fileID: 0}
+  currentcal: 0
 --- !u!95 &1618380636554723387
 Animator:
   serializedVersion: 5
@@ -264,8 +268,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3129987360222943249}
   - component: {fileID: 4225455883344000939}
-  - component: {fileID: 6404651327761228526}
   - component: {fileID: 2439563142717151935}
+  - component: {fileID: 3676196742225313795}
   m_Layer: 0
   m_Name: FireWand
   m_TagString: Untagged
@@ -341,27 +345,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &6404651327761228526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122696806439572975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b1141f63d8543744bc355758fd2a126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisGun: {fileID: 0}
-  pCorpse: {fileID: 0}
-  pStats: {fileID: 0}
-  _pBullet: {fileID: 3230586841897229014, guid: 4a62f7994cf26a6458e437940f11cab3, type: 3}
-  _bSpeed: 5
-  _bCooldown: 1.5
-  AimCordFromPlayer: {x: 0, y: 0, z: 0}
-  mPosFromPlayer: {x: 0, y: 0, z: 0}
-  _firePoint: {fileID: 7068783728957471943}
 --- !u!95 &2439563142717151935
 Animator:
   serializedVersion: 5
@@ -383,6 +366,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3676196742225313795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122696806439572975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43ab1babee2eb44aa1ed2d1d6aeec63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisGun: {fileID: 0}
+  pCorpse: {fileID: 0}
+  pStats: {fileID: 0}
+  _bCooldown: 1.5
+  AimCordFromPlayer: {x: 0, y: 0, z: 0}
+  mPosFromPlayer: {x: 0, y: 0, z: 0}
+  _firePoint: {fileID: 7068783728957471943}
+  bulletPrefab: {fileID: 3230586841897229014, guid: 4a62f7994cf26a6458e437940f11cab3, type: 3}
+  bulletSpeed: 10
+  explosionRadius: 2
+  explosionDuration: 3
+  damageInterval: 1
 --- !u!1 &7492143038720159327
 GameObject:
   m_ObjectHideFlags: 0

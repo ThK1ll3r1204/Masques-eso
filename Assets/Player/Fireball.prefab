@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5478948516798773449}
   - component: {fileID: 4941477392646606448}
   - component: {fileID: 818592064661187001}
+  - component: {fileID: 5187816685621043216}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: PlayerBullet
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3230586841897229014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 524f7e2e343acaf4bad55638e4416566, type: 3}
   m_Name: 
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3230586841897229014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 396b3b1e6b00ac044b1149d924da8cbe, type: 3}
   m_Name: 
@@ -199,3 +200,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5187816685621043216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230586841897229014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d9f85d4c1f0b64ba5bd34aef6709de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionRadius: 3
+  explosionDuration: 3
+  damageInterval: 1
+  lastDamageTime: 0

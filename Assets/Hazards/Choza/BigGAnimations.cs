@@ -56,7 +56,7 @@ public class BigGAnimations : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            ChangeLife(-30f);
+            ChangeLife(-20f);
         }
     }
 

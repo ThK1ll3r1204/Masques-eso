@@ -28,6 +28,8 @@ public class PlayerStats : MonoBehaviour
     {
 
         pMov = GetComponent<Movement>();
+        lifebar = FindAnyObjectByType<Lifebar>();
+        calbar = FindAnyObjectByType<Calbar>();
         _pLife = 100f;
         currentlife = _pLife;
         lifebar.SetMaxLife(_pLife);
@@ -95,7 +97,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Muerto");
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Derrota");
     }
 
     private void FixedUpdate()

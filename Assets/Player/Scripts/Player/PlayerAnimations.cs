@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     PlayerWpnAiming pAim;
+    PlayerWpnAimingB pAimB;
     Animator anim;
     SpriteRenderer pSprite;
     Transform pTransform;
@@ -27,6 +28,9 @@ public class PlayerAnimations : MonoBehaviour
         anim.SetFloat("x", pAim.AimCordFromPlayer.x);
         anim.SetFloat("y", pAim.AimCordFromPlayer.y);
 
+        anim.SetFloat("x", pAimB.AimCordFromPlayer.x);
+        anim.SetFloat("y", pAimB.AimCordFromPlayer.y);
+
         //Detecta si el jugador apunta a la derecha o izquierda
         if (pAim.AimCordFromPlayer.x < 0f)
         {
@@ -45,6 +49,9 @@ public class PlayerAnimations : MonoBehaviour
             anim.SetBool("isWalking", false);
 
         if (pStats.isDead)
+        {
             anim.SetTrigger("isDead");
+        }
+
     }
 }
