@@ -62,7 +62,18 @@ public class GoblinAnims : MonoBehaviour
 
         if (eLife.eDie)
             anim.SetTrigger("isDead");
+
+        
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            anim.SetTrigger("damage");
+        }
+    }
+
 }
 

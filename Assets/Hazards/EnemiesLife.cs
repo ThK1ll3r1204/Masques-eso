@@ -8,6 +8,7 @@ public class EnemiesLife : MonoBehaviour
     [SerializeField] public PlayerBullet pBullet;
     [SerializeField] public PlayerStats pStats;
     [SerializeField] public bool eDie = false;
+    public GameObject PEffect;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class EnemiesLife : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+           
             pBullet = collision.GetComponent<PlayerBullet>();
             float nextDamage = pBullet.bDamage;
             BeingDamaged(nextDamage);
@@ -36,11 +38,16 @@ public class EnemiesLife : MonoBehaviour
         pStats.enemyKilled = true;
         eDie = true;
         Destroy(this.gameObject);
+        if (PEffect != null)
+        {
+            Instantiate(PEffect, transform.position, Quaternion.identity);
+        }
     }
 
     public void BeingDamaged(float damage)
     {
         life -= damage;
+        
     }
 
 }

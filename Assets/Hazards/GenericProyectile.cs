@@ -8,6 +8,8 @@ public class GenericProyectile : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] Rigidbody2D rb2d;
 
+    public GameObject PEffect;
+
     public bool counterShot;
 
     //Detector raycast
@@ -40,6 +42,7 @@ public class GenericProyectile : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             MakeDamage(damage);
+            Instantiate(PEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
 

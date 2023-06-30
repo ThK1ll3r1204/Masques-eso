@@ -24,6 +24,8 @@ public class PlayerStats : MonoBehaviour
     public Calbar calbar;
     public float currentcal;
 
+    
+
     private void Start()
     {
 
@@ -81,6 +83,8 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _pLife += damage;
+        
+        
         // Muerto? xd
         if (_pLife <= 0f)
         {
@@ -104,6 +108,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentlife = _pLife;
         lifebar.Setlife(currentlife);
+        
     }
 
     

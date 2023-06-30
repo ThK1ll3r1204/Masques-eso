@@ -13,8 +13,8 @@ public class TrapShoot : MonoBehaviour
 
     public float bSpeed;
 
-    public bool playerdetect;
-    public LayerMask PlayerLayer;
+    public bool triggerdetect;
+    public LayerMask TriggerLayer;
     public float distance;
 
 
@@ -26,8 +26,8 @@ public class TrapShoot : MonoBehaviour
 
     void Trap()
     {
-        playerdetect = Physics2D.Raycast(transform.position, -transform.up, distance, PlayerLayer);
-        if (playerdetect && TimeA > TimeB)
+        triggerdetect = Physics2D.Raycast(transform.position, -transform.up, distance, TriggerLayer);
+        if (triggerdetect && TimeA > TimeB)
         {
             Vector3 direction = Vector3.zero;
             direction = Vector3.down;

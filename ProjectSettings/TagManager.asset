@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerBullet
   - Enemy
+  - Limit
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - UI
   - Walls
   - Triger
-  - 
+  - ZPLimit
   - 
   - 
   - 

@@ -9,6 +9,7 @@ public class PlayerBullet : MonoBehaviour
     public float _maxBulletTime;
     private float _timerBulletTime;
 
+
     Animator bAnim;
 
     void Start()

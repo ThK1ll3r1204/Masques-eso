@@ -13,4 +13,22 @@ public class Blife : MonoBehaviour
     {
         Destroy(gameObject, 20f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+           Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Limit"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
