@@ -57,7 +57,7 @@ public class PlayerWpnAiming : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             // Eje al que apunta el arco
-            BowAimingOnAxis();
+            BowAimingOnAxis(aAnimName);
 
             // Posicion dependiendo a donde apunta el arco
             BowAimingPosition(aAnimName);
@@ -168,7 +168,7 @@ public class PlayerWpnAiming : MonoBehaviour
 
     }
 
-    private void BowAimingOnAxis()
+    private void BowAimingOnAxis(string aAnimName)
     {
         //Detecta si el jugador apunta a la derecha o izquierda
         if (AimCordFromPlayer.x > 0f)
@@ -184,14 +184,22 @@ public class PlayerWpnAiming : MonoBehaviour
             wSprite.flipY = true;
         }
 
-        // El jugador apunta abajo
-        if (AimCordFromPlayer.y < 0f)
+        bool lookinLat;
+
+        if (aAnimName == "Walk_Lat" || aAnimName == "Idle_Lat")
+            lookinLat = true;
+        else
+            lookinLat = false;
+
+
+            // El jugador apunta abajo
+            if (AimCordFromPlayer.y < 0f && !lookinLat)
         {
             AimingUp = false;
-            wSprite.sortingOrder = 3;
+                wSprite.sortingOrder = 2;
         }
         // El jugador apunta arriba
-        else
+        else if (lookinLat || AimCordFromPlayer.y > 0)
         {
             AimingUp = true;
             wSprite.sortingOrder = 1;
@@ -202,16 +210,16 @@ public class PlayerWpnAiming : MonoBehaviour
         switch (aAnimName)
         {
             // Apunta a arriba y al lateral derecho
-            case "Walk_Lat" when !AimingUp && AimingRight:
-            case "Idle_Lat" when !AimingUp && AimingRight:
+            case "Walk_Lat" when /*!AimingUp &&*/ AimingRight:
+            case "Idle_Lat" when /*!AimingUp &&*/ AimingRight:
                 thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.166f + Vector3.right * 0.289f;
                 break;
             // Apunta a arriba y al lateral izquierdo
-            case "Walk_Lat" when !AimingUp && !AimingRight:
-            case "Idle_Lat" when !AimingUp && !AimingRight:
+            case "Walk_Lat" when /*!AimingUp &&*/ !AimingRight:
+            case "Idle_Lat" when /*!AimingUp &&*/ !AimingRight:
                 thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.059f + Vector3.right * -0.289f;
                 break;
-            // Apunta a abajo y al lateral derecho
+            /* Apunta a abajo y al lateral derecho
             case "Walk_Lat" when AimingUp && AimingRight:
             case "Idle_Lat" when AimingUp && AimingRight:
                 thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.127f + Vector3.right * 0.318f;
@@ -220,14 +228,14 @@ public class PlayerWpnAiming : MonoBehaviour
             case "Walk_Lat" when AimingUp && !AimingRight:
             case "Idle_Lat" when AimingUp && !AimingRight:
                 thisGun.transform.position = pCorpse.transform.position + Vector3.up * 0.127f + Vector3.right * -0.318f;
-                break;
+                break; */
             //  Apunta abajo
             case "Walk":
             case "Idle":
                 if (AimingRight) // Derecha
-                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.584f + Vector3.right * -0.201f;
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.6f + Vector3.right * -0.201f;
                 else  // Izquierda
-                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.584f + Vector3.right * 0.201f;
+                    thisGun.transform.position = pCorpse.transform.position + Vector3.up * -0.6f + Vector3.right * 0.201f;
                 break;
             // Apunta en diagonal abajo
             case "Idle_Diag_D":

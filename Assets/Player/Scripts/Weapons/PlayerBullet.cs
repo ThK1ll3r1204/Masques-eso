@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float bDamage;
     public float _maxBulletTime;
-    private float _timerBulletTime;
+    public float _timerBulletTime;
+
+    public bool collision;
 
 
     Animator bAnim;
@@ -24,13 +26,17 @@ public class PlayerBullet : MonoBehaviour
 
         if (_timerBulletTime >= _maxBulletTime)
         {
+            if (transform.GetComponent<FireBall>() != null && transform.childCount != 0)
+                transform.GetChild(0).transform.parent = null;
             Destroy(gameObject);
         }
+        else
+            collision = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player") && collision.GetComponent<FireZone>() == null)    
         {
             StartCoroutine(BulletCollisionDead());
         }
@@ -39,9 +45,13 @@ public class PlayerBullet : MonoBehaviour
 
     IEnumerator BulletCollisionDead()
     {
+        collision = true;
         if (bAnim != null)
             bAnim.SetTrigger("collision");
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
+        if (transform.GetComponent<FireBall>() != null && transform.childCount != 0)
+            transform.GetChild(0).transform.parent = null;
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
 }

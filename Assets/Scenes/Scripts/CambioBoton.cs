@@ -9,9 +9,13 @@ public class CambioBoton : MonoBehaviour
     Button button;
     public int sceneIndex;
 
-    void Start()
+    private void Awake()
     {
         button = GetComponent<Button>();
+    }
+
+    void Start()
+    {
         button.onClick.AddListener(ChangeSceneXindex);
     }
 

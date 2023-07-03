@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     PlayerWpnAiming pAim;
-    PlayerWpnAimingB pAimB;
     Animator anim;
     SpriteRenderer pSprite;
     Transform pTransform;
@@ -21,32 +20,16 @@ public class PlayerAnimations : MonoBehaviour
         pStats = this.GetComponent<PlayerStats>();
     }
 
+
     void Update()
     {
         pAim = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAiming>();
-        pAimB = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAimingB>();
-        if (pStats.wpnIsBow)
-        {
-            anim.SetFloat("x", pAim.AimCordFromPlayer.x);
-            anim.SetFloat("y", pAim.AimCordFromPlayer.y);
-        }
-        else
-        {
-            anim.SetFloat("x", pAimB.AimCordFromPlayer.x);
-            anim.SetFloat("y", pAimB.AimCordFromPlayer.y);
-        }
 
-        //Detecta si el jugador apunta a la derecha o izquierda
-        if (pAim.AimCordFromPlayer.x < 0f)
-        {
-            //pTransform.localScale =  Vector3.one + Vector3.left*2;
-            pSprite.flipX = true; 
-        }
-        else
-        {
-            //pTransform.localScale = Vector3.one;
-            pSprite.flipX = false;
-        }
+        SideIsLooking();
+
+        anim.SetFloat("x", pAim.AimCordFromPlayer.x);
+        anim.SetFloat("y", pAim.AimCordFromPlayer.y);
+
 
         if (pMove.isWalking)
             anim.SetBool("isWalking", true);
@@ -58,5 +41,22 @@ public class PlayerAnimations : MonoBehaviour
             anim.SetTrigger("isDead");
         }
 
+    }
+
+
+
+    //Detecta si el jugador apunta a la derecha o izquierda cuando usa el arco
+    private void SideIsLooking()
+    {
+        if (pAim.AimCordFromPlayer.x < 0f)
+        {
+            //pTransform.localScale =  Vector3.one + Vector3.left*2;
+            pSprite.flipX = true;
+        }
+        else
+        {
+            //pTransform.localScale = Vector3.one;
+            pSprite.flipX = false;
+        }
     }
 }
