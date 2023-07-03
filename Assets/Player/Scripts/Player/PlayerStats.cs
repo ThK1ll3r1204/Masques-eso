@@ -21,8 +21,6 @@ public class PlayerStats : MonoBehaviour
     public bool wpnIsBow;
     public float currentlife;
     public Lifebar lifebar;
-    public Calbar calbar;
-    public float currentcal;
 
     
 
@@ -31,13 +29,10 @@ public class PlayerStats : MonoBehaviour
 
         pMov = GetComponent<Movement>();
         lifebar = FindAnyObjectByType<Lifebar>();
-        calbar = FindAnyObjectByType<Calbar>();
         _pLife = 100f;
         currentlife = _pLife;
         lifebar.SetMaxLife(_pLife);
         _calcio = 100f;
-        currentcal = _calcio;
-        calbar.SetMaxCalcio(_calcio);
         enemyKilled = false;
         wpnIsBow = true;
     }
@@ -75,8 +70,6 @@ public class PlayerStats : MonoBehaviour
             bow.SetActive(false);
             fireWand.SetActive(true);
         }
-        currentcal = _calcio;
-        calbar.SetCalcio(currentcal);
 
     }
 

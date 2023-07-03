@@ -39,20 +39,23 @@ public class GenericProyectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Camera"))
         {
-            MakeDamage(damage);
-            Instantiate(PEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-        }
+            if (collision.CompareTag("Player"))
+            {
+                MakeDamage(damage);
+                Instantiate(PEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
 
 
-        if (collision.CompareTag("Enemy") && counterShot)
-        {
-            float finalDamage = damage * 1.5f;
-            EnemiesLife eLife = collision.GetComponent<EnemiesLife>();
-            eLife.life -= finalDamage;
-            Destroy(this.gameObject);
+            if (collision.CompareTag("Enemy") && counterShot)
+            {
+                float finalDamage = damage * 1.5f;
+                EnemiesLife eLife = collision.GetComponent<EnemiesLife>();
+                eLife.life -= finalDamage;
+                Destroy(this.gameObject);
+            }
         }
     }
 

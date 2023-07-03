@@ -32,7 +32,6 @@ public class FireBall : MonoBehaviour
 
         if (pBullet.collision && this.transform.childCount == 0)
         {
-            pBullet.rb.constraints = RigidbodyConstraints2D.FreezePosition;
             Instantiate(fireZone, transform.position, Quaternion.identity, this.transform);
             Debug.Log("creao");
         }

@@ -128,6 +128,11 @@ MonoBehaviour:
   goblins: {fileID: 2109163002268716551, guid: 6b1fde6302fb78a489d260eaf20ab3af, type: 3}
   timer: 0
   timermax: 8
+  radiusForEnemies: 25
+  enemiesLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  maxEnemiesAmount: 5
   dead: 0
   takeDamage: 0
   playerLayer:

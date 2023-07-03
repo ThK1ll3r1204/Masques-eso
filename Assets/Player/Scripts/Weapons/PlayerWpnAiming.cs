@@ -192,8 +192,8 @@ public class PlayerWpnAiming : MonoBehaviour
             lookinLat = false;
 
 
-            // El jugador apunta abajo
-            if (AimCordFromPlayer.y < 0f && !lookinLat)
+        // El jugador apunta abajo
+        if (AimCordFromPlayer.y < 0f && !lookinLat)
         {
             AimingUp = false;
                 wSprite.sortingOrder = 2;

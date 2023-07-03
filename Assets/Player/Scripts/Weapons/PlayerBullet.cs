@@ -36,8 +36,9 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && collision.GetComponent<FireZone>() == null)    
+        if (!collision.CompareTag("Camera") && !collision.CompareTag("Player") && collision.GetComponent<FireZone>() == null)    
         {
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             StartCoroutine(BulletCollisionDead());
         }
     }

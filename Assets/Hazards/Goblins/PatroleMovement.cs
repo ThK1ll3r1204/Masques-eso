@@ -14,24 +14,29 @@ public class PatroleMovement : MonoBehaviour
     float maxTimerReset = 0.01f;
 
     public float MoveSpeed;
-    float sideToLook;
+    public int sideToLook;
     float randomSide;
 
     public bool isWalking = false;
 
-    Animator anim;
     GoblinDetect goblinDetect;
+    GoblinAttack gAttack;
 
+    Transform direction;
     private void Start()
     {
+        gAttack = GetComponent<GoblinAttack>();
         goblinDetect = GetComponent<GoblinDetect>();
-        maxTimerStay = Random.Range(2, 8);
+        direction = this.transform.Find("directionInPatrole");
+        maxTimerStay = Random.Range(2, 12);
         maxTimerMove = Random.Range(2, 5);
     }
     void Update()
     {
-           if (timerStay > maxTimerStay)
-           { 
+        if (!goblinDetect.playerFocused)
+        { 
+            if (timerStay > maxTimerStay)
+            {
                 timerMove += Time.deltaTime;
                 if (timerMove > maxTimerMove)
                 {
@@ -42,43 +47,64 @@ public class PatroleMovement : MonoBehaviour
                     {
                         timerStay = 0;
                         timerMove = 0;
-                        maxTimerStay = Random.Range(2, 8);
+                        maxTimerStay = Random.Range(2, 12);
                         maxTimerMove = Random.Range(2, 5);
-                        sideToLook = Random.Range(-1, 1);
+                        sideToLook = Random.Range(-2, 2);
                     }
                 }
 
                 if (timerMove < maxTimerMove)
                 {
-                    isWalking = true;
-                    //anim.SetBool("Walking", true);
-                    //anim.SetBool("Idle", false);
+                    GoBackThereisAWall(goblinDetect.wallXrDetected, -2);
+                    GoBackThereisAWall(goblinDetect.wallXlDetected, 2);
+                    GoBackThereisAWall(goblinDetect.wallYuDetected, -1);
+                    GoBackThereisAWall(goblinDetect.wallYdDetected, 1);
                     Move(sideToLook);
                 }
-           }
-           
+            }
 
-        timerReset += Time.deltaTime;
-        timerStay += Time.deltaTime;
-
-    } 
+            if (timerMove == 0)
+                isWalking = false;
 
 
+            timerReset += Time.deltaTime;
+            timerStay += Time.deltaTime;
+        }
+        else if (gAttack.isChasing)
+            isWalking = false;
+
+    }
+
+    private void GoBackThereisAWall(bool sideDetected, int newSide)
+    {
+        if (sideDetected)
+        {
+            sideToLook = newSide;
+        }
+    }
 
     void Move(float lookAt)
     {
         if(!goblinDetect.playerFocused)
         {
-            if (lookAt < 0)
+            isWalking = true;
+            switch (lookAt)
             {
-                transform.position += Vector3.left * MoveSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(-1, 1, 1);
+                case -2:
+                    direction.position = this.transform.position + Vector3.left * 3;
+                    break;
+                case 2:
+                    direction.position = this.transform.position + Vector3.right * 3;
+                    break;
+                case 1:
+                    direction.position = this.transform.position + Vector3.up * 3;
+                    break;
+                case -1:
+                    direction.position = this.transform.position + Vector3.down * 3;
+                    break;
+
             }
-            else
-            {
-                transform.position += Vector3.right * MoveSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(1, 1, 1);
-            }
+            transform.position = Vector2.MoveTowards(this.transform.position, direction.position, MoveSpeed * Time.deltaTime);
         }
     }
 }

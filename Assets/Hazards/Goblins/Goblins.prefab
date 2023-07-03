@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8895576742940960350}
   - component: {fileID: 4422175617891023394}
   - component: {fileID: 2179754737694419051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Goblins
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -36,9 +36,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6685856035266557021}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2710484372678440283
 SpriteRenderer:
@@ -131,9 +132,16 @@ MonoBehaviour:
   detectorLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  wallsLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   debugIdleColor: {r: 1, g: 0, b: 0, a: 0.2627451}
   debugDetectedColor: {r: 0, g: 1, b: 0, a: 0.21176471}
   showGizmos: 0
+  wallXrDetected: 0
+  wallXlDetected: 0
+  wallYuDetected: 0
+  wallYdDetected: 0
 --- !u!95 &448462742849761871
 Animator:
   serializedVersion: 5
@@ -183,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109163002268716551}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39c3e455c7f1bc8448f2e161f0602c58, type: 3}
   m_Name: 
@@ -193,6 +201,7 @@ MonoBehaviour:
   timerMove: 0
   maxTimerMove: 0
   MoveSpeed: 3
+  sideToLook: 0
   isWalking: 0
 --- !u!70 &8895576742940960350
 CapsuleCollider2D:
@@ -245,7 +254,7 @@ MonoBehaviour:
   pSprite: {fileID: 0}
   pTrans: {fileID: 0}
   eLife: {fileID: 0}
-  GMov: {fileID: 0}
+  gMov: {fileID: 0}
   gAttack: {fileID: 0}
   gRgbd: {fileID: 0}
   SeeCordFromPlayer: {x: 0, y: 0, z: 0}
@@ -276,3 +285,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &2464182999520043167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6685856035266557021}
+  m_Layer: 0
+  m_Name: directionInPatrole
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6685856035266557021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464182999520043167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8968648389936285082}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

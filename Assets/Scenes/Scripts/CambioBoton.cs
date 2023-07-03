@@ -16,7 +16,6 @@ public class CambioBoton : MonoBehaviour
 
     void Start()
     {
-        button.onClick.AddListener(ChangeSceneXindex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

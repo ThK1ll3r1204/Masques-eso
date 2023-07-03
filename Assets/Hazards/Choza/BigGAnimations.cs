@@ -19,6 +19,7 @@ public class BigGAnimations : MonoBehaviour
     [SerializeField] float radius;
 
 
+
     void Awake()
     {
         _anim = GetComponent<Animator>();

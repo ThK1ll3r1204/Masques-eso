@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class Calbar : MonoBehaviour
 {
+    PlayerStats pStats;
     public Slider Slider;
 
-    public void SetMaxCalcio(float cal)
+
+
+    private void Awake()
     {
-        Slider.maxValue = cal;
-        Slider.value = cal;
+        pStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
-    public void SetCalcio(float calc)
+
+    private void Update()
     {
-        Slider.value = calc;
+        Slider.value = pStats._calcio;
     }
+
 }

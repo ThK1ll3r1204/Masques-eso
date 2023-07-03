@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemiesLife : MonoBehaviour
 {
-    [SerializeField] public float life;
-    [SerializeField] public PlayerBullet pBullet;
-    [SerializeField] public PlayerStats pStats;
-    [SerializeField] public bool eDie = false;
+    public float life;
+    public PlayerBullet pBullet;
+    public PlayerStats pStats;
+    public bool eDie = false;
     public GameObject PEffect;
+
 
     private void Awake()
     {

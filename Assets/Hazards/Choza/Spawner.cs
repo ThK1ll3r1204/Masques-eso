@@ -17,6 +17,14 @@ public class Spawner : MonoBehaviour
     public float timer;
     [SerializeField] float timermax;
 
+
+    Transform detectorOrigin;
+    [SerializeField] float radiusForEnemies;
+    [SerializeField] LayerMask enemiesLayerMask;
+    int enemiesinarea;
+    [SerializeField] int maxEnemiesAmount;
+    
+
     public bool dead;
     public bool takeDamage;
 
@@ -26,14 +34,24 @@ public class Spawner : MonoBehaviour
 
     void Awake()
     {
+        detectorOrigin = GetComponent<Transform>();
         _anim = GetComponent<Animator>();
         dead = false;
         _sLife = 300f;
     }
 
+
     void Update()
     {
         _canSpawn = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+
+
+        Collider2D[] enemiesAmount = Physics2D.OverlapCircleAll((Vector2)detectorOrigin.position, radiusForEnemies, enemiesLayerMask);
+
+        if (enemiesAmount.Length >= maxEnemiesAmount || _sLife <= 0)
+            _canSpawn = false;
+
+        enemiesinarea = enemiesAmount.Length;
 
         if (_canSpawn)
         {
@@ -76,6 +94,8 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    
+    
 
     public void ChangeLife(float value)
     {
@@ -86,6 +106,7 @@ public class Spawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, radiusForEnemies);
     }
 
 }
