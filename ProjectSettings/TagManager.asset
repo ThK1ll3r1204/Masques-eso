@@ -24,8 +24,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - BG
+  - g
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Structures
     uniqueID: 480265487
+    locked: 0
+  - name: UI
+    uniqueID: 443127201
     locked: 0
