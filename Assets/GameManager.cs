@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
         #region "Barras"
         // Barra del Cooldown del baculo
         if (pStats.fireBallsCount >= 3)
@@ -66,6 +65,5 @@ public class GameManager : MonoBehaviour
         cBarSprite.fillAmount = pStats._calcio / 100;
 
         #endregion
-
     }
 }
