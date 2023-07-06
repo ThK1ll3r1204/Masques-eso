@@ -21,20 +21,14 @@ public class PlayerStats : MonoBehaviour
     public bool wpnIsBow;
 
     public bool canShoot;
+    public bool canChangeWpn;
     public int fireBallsCount;
 
     public float fireWandCooldown;
     public float maxFireWandCooldown;
 
-
-
-    GameObject theBar;
-    Image wBarSprite;
-
     private void Awake()
     {
-        theBar = GameObject.Find("WandBar").gameObject;
-        wBarSprite = GameObject.Find("Wandfill").GetComponent<Image>();
     }
 
     private void Start()
@@ -62,7 +56,9 @@ public class PlayerStats : MonoBehaviour
             enemyKilled = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        
+
+        if (Input.GetKeyUp(KeyCode.Q) && canChangeWpn)
         {
             if (!wpnIsBow)
                 wpnIsBow = true;
@@ -96,17 +92,6 @@ public class PlayerStats : MonoBehaviour
 
 
         // Barra del baculo
-        if(fireBallsCount >= 3)
-        {
-            theBar.gameObject.SetActive(true);
-        }
-        else
-        {
-            theBar.gameObject.SetActive(false);
-        }
-
-
-        wBarSprite.fillAmount = fireWandCooldown / maxFireWandCooldown;
     }
 
     public void TakeDamage(float damage)
