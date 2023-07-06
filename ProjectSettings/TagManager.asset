@@ -52,7 +52,7 @@ TagManager:
   - name: Entities
     uniqueID: 688308747
     locked: 0
-  - name: Structures
+  - name: Anykind
     uniqueID: 480265487
     locked: 0
   - name: UI Background
