@@ -9,6 +9,7 @@ TagManager:
   - Limit
   - Trigger
   - Camera
+  - BatPis
   layers:
   - Default
   - TransparentFX
