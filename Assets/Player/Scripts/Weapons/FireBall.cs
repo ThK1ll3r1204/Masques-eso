@@ -17,6 +17,7 @@ public class FireBall : MonoBehaviour
     {
         pBullet = GetComponent<PlayerBullet>();
         bAnim = GetComponent<Animator>();
+        FindObjectOfType<AudioManager>().Play("Bola de Fuego");
     }
 
     private void Start()
