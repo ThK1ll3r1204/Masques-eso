@@ -19,6 +19,7 @@ public class FireZone : MonoBehaviour
         anim = GetComponent<Animator>();
         fBall = transform.parent.GetComponent<FireBall>();
         pBullet = transform.parent.GetComponent<PlayerBullet>();
+        FindObjectOfType<AudioManager>().Play("Fuego");
     }
 
     void Update()
