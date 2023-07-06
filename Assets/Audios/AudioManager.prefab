@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &623731562899915627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4779063595016794804}
+  - component: {fileID: 5467483127076097152}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4779063595016794804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623731562899915627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -58.4, y: 36.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5467483127076097152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623731562899915627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c640ccc693c06469c625fdc59a9711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Disparo
+    clip: {fileID: 8300000, guid: 5cf644f9561be1942abbe8748e7fa8f5, type: 3}
+    volume: 0.358
+    pitch: 1
+    source: {fileID: 0}
+  - name: Spawn
+    clip: {fileID: 8300000, guid: 1218cceb87a50a741a8f78cd687c236f, type: 3}
+    volume: 0.561
+    pitch: 2
+    source: {fileID: 0}
+  - name: Muerte
+    clip: {fileID: 8300000, guid: 2071e58611831ab418d6ff52ed27fefd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Bola de Fuego
+    clip: {fileID: 8300000, guid: 4e05028e85b736e4aaa8e67ff7e41042, type: 3}
+    volume: 0.355
+    pitch: 1
+    source: {fileID: 0}
+  - name: Fuego
+    clip: {fileID: 8300000, guid: a7ee266761259954a8e766a36dba993f, type: 3}
+    volume: 0.198
+    pitch: 1
+    source: {fileID: 0}

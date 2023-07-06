@@ -82,9 +82,10 @@ public class PlayerWpnAiming : MonoBehaviour
                 bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bullet.GetComponent<Rigidbody2D>().velocity = AimCordFromPlayer.normalized * _bSpeed;
                 _bCooldowntimer = _bCooldown;
-            
+            FindObjectOfType<AudioManager>().Play("Disparo");
+
             //if(pStats.wpnIsBow)
-             //FindObjectOfType<AudioManager>().Play("Disparo");
+            //FindObjectOfType<AudioManager>().Play("Disparo");
         }
     }
 
