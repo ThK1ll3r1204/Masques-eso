@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Victoria Lv1.unity
     guid: d2b0af92b7f6e49d5a934493a65c4826
   - enabled: 1
+    path: Assets/Scenes/Level2F.unity
+    guid: c72c998762cc26a4c8a2abf4d86e9c02
+  - enabled: 1
     path: Assets/Scenes/Menus/Derrota.unity
     guid: 328e55da9bbd44affa2b051b427ac33f
   - enabled: 1

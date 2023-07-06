@@ -65,5 +65,11 @@ public class GameManager : MonoBehaviour
         cBarSprite.fillAmount = pStats._calcio / 100;
 
         #endregion
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene(5);
+        }
+
     }
 }
