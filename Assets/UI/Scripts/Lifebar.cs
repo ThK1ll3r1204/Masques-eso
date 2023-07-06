@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class Lifebar : MonoBehaviour
 {
-
+    PlayerStats pStats;
     public Slider Slider;
 
-    public void SetMaxLife(float life)
+
+
+    private void Awake()
     {
-        Slider.maxValue = life;
-        Slider.value = life;
+        pStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
-    public void Setlife(float life)
+
+    private void FixedUpdate()
     {
-        Slider.value = life; 
+        Slider.value = pStats._pLife;
     }
 }

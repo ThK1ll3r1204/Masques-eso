@@ -7,7 +7,7 @@ public class PlayerBullet : MonoBehaviour
     public Rigidbody2D rb;
     public float bDamage;
     public float _maxBulletTime;
-    public float _timerBulletTime;
+    float _timerBulletTime;
 
     public bool collision;
 

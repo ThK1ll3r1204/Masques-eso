@@ -224,8 +224,10 @@ MonoBehaviour:
   wpnIsBow: 0
   currentlife: 0
   lifebar: {fileID: 0}
-  calbar: {fileID: 0}
-  currentcal: 0
+  canShoot: 0
+  fireBallsCount: 0
+  fireWandCooldown: 0
+  maxFireWandCooldown: 0
 --- !u!114 &6838978787705890306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +365,7 @@ MonoBehaviour:
   pStats: {fileID: 0}
   _pBullet: {fileID: 3230586841897229014, guid: 4a62f7994cf26a6458e437940f11cab3, type: 3}
   _bSpeed: 5
-  _bCooldown: 3
+  _bCooldown: 0.5
   AimCordFromPlayer: {x: 0, y: 0, z: 0}
   mPosFromPlayer: {x: 0, y: 0, z: 0}
   _firePoint: {fileID: 7068783728957471943}
@@ -491,7 +493,7 @@ MonoBehaviour:
   pCorpse: {fileID: 0}
   pStats: {fileID: 0}
   _pBullet: {fileID: 8367036199037807795, guid: 4d1da05b5c75c48468a737da06faca6f, type: 3}
-  _bSpeed: 10
+  _bSpeed: 20
   _bCooldown: 1
   AimCordFromPlayer: {x: 0, y: 0, z: 0}
   mPosFromPlayer: {x: 0, y: 0, z: 0}

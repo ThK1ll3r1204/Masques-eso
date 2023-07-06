@@ -16,6 +16,8 @@ public class Pozo : MonoBehaviour
     Rigidbody2D chicRb;
     SpriteRenderer chicSprite;
 
+    int randomChic;
+
     void Awake()
     {
         sign = transform.Find("Interaction Sign").GetComponent<Interaction>();
@@ -27,6 +29,15 @@ public class Pozo : MonoBehaviour
     {
         chicGifted = false;
         bucketIsUp = false;
+
+        randomChic = Random.Range(-9, 9);
+
+        if (randomChic > 0)
+        {
+            isChicGift = true;
+        }
+        else
+            isChicGift = false;
     }
 
     void Update()

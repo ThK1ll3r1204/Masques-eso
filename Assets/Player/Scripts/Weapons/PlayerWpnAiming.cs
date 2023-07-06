@@ -23,10 +23,11 @@ public class PlayerWpnAiming : MonoBehaviour
     public Vector3 mPosFromPlayer;
 
     bool AimingRight;
-    bool AimingUp;
+
 
     [SerializeField] Transform _firePoint;
     private float _bCooldowntimer;
+
 
 
     void Awake()
@@ -37,6 +38,10 @@ public class PlayerWpnAiming : MonoBehaviour
         thisGun = this.gameObject;
         wSprite = this.GetComponent<SpriteRenderer>();
         wAnimator = this.GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
     }
 
     void Update()
@@ -61,6 +66,8 @@ public class PlayerWpnAiming : MonoBehaviour
 
             // Posicion dependiendo a donde apunta el arco
             BowAimingPosition(aAnimName);
+
+            pStats.canShoot = true;
         }
         else
         {
@@ -72,9 +79,19 @@ public class PlayerWpnAiming : MonoBehaviour
             FireWandAimingPosition(aAnimName);
         }
 
+        if (pStats.fireBallsCount >= 3 && !pStats.wpnIsBow)
+        {
+            pStats.canShoot = false;
+            wAnimator.SetBool("Cooldown", true);
+        }
+
+
+        if (pStats.fireBallsCount <= 0)
+            wAnimator.SetBool("Cooldown", false);
+
 
         //Disparo
-        if (Input.GetMouseButton(0) && _bCooldowntimer <= 0)
+        if (Input.GetMouseButton(0) && _bCooldowntimer <= 0 && pStats.canShoot)
         {
             wAnimator.SetTrigger("Shoot");
                 float angle = Mathf.Atan2(AimCordFromPlayer.y, AimCordFromPlayer.x) * Mathf.Rad2Deg;
@@ -83,6 +100,11 @@ public class PlayerWpnAiming : MonoBehaviour
                 bullet.GetComponent<Rigidbody2D>().velocity = AimCordFromPlayer.normalized * _bSpeed;
                 _bCooldowntimer = _bCooldown;
             FindObjectOfType<AudioManager>().Play("Disparo");
+
+            if(!pStats.wpnIsBow)
+            {
+                pStats.fireBallsCount += 1;
+            }
 
             //if(pStats.wpnIsBow)
             //FindObjectOfType<AudioManager>().Play("Disparo");
@@ -196,13 +218,11 @@ public class PlayerWpnAiming : MonoBehaviour
         // El jugador apunta abajo
         if (AimCordFromPlayer.y < 0f && !lookinLat)
         {
-            AimingUp = false;
                 wSprite.sortingOrder = 2;
         }
         // El jugador apunta arriba
         else if (lookinLat || AimCordFromPlayer.y > 0)
         {
-            AimingUp = true;
             wSprite.sortingOrder = 1;
         }
     }

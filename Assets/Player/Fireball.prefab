@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireZone: {fileID: 1058659294803222737, guid: 95cd133dbecace542a3659e89d714a19, type: 3}
+  fireZoneCreated: 0
 --- !u!114 &1676408219329470082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4941477392646606448}
-  bDamage: 5
+  bDamage: 50
   _maxBulletTime: 2
+  _timerBulletTime: 0
   collision: 0
 --- !u!50 &4941477392646606448
 Rigidbody2D:

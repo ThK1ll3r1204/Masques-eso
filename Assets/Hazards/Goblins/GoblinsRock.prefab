@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pStats: {fileID: 0}
-  damage: 10
+  damage: 5
   rb2d: {fileID: 0}
   PEffect: {fileID: 7143743744564061375, guid: 30c05b3dbf3ad634daf2b3abaf83b876, type: 3}
   counterShot: 0

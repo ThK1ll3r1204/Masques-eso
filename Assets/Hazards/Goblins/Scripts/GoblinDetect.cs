@@ -15,10 +15,10 @@ public class GoblinDetect : MonoBehaviour
     [Header("Circle Detector parameters")]
     [SerializeField]
     public Transform detectorOrigin;
-    [Range(1f, 10f)]
+    [Range(8f, 20f)]
     public float radiusIdle;
 
-    [Range(5f, 15f)]
+    [Range(12f, 28f)]
     public float radiusFocus;
 
     public float detectionDelay = 0.3f;

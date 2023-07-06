@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
 {
     //Luis
     [SerializeField] Movement pMov;
-    [SerializeField] public float _pLife;
+    public float _pLife;
     public bool enemyKilled;
     public bool isDead;
     public float _calcio;
@@ -19,21 +19,23 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject fireWand;
 
     public bool wpnIsBow;
-    public float currentlife;
-    public Lifebar lifebar;
 
-    
+    public bool canShoot;
+    public int fireBallsCount;
+
+    public float fireWandCooldown;
+    [SerializeField] float maxFireWandCooldown;
+
 
     private void Start()
     {
 
         pMov = GetComponent<Movement>();
-        lifebar = FindAnyObjectByType<Lifebar>();
         _pLife = 100f;
-        currentlife = _pLife;
         _calcio = 100f;
         enemyKilled = false;
         wpnIsBow = true;
+        canShoot = true;
     }
     
 
@@ -70,6 +72,19 @@ public class PlayerStats : MonoBehaviour
             fireWand.SetActive(true);
         }
 
+
+        if (fireBallsCount >= 3)
+        {
+            fireWandCooldown -= Time.deltaTime;
+
+            if (fireWandCooldown <= 0)
+            {
+                fireWandCooldown = maxFireWandCooldown;
+                fireBallsCount = 0;
+                canShoot = true;
+            }
+        }
+
     }
 
     public void TakeDamage(float damage)
@@ -94,12 +109,5 @@ public class PlayerStats : MonoBehaviour
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
         SceneManager.LoadScene("Derrota");
-    }
-
-    private void FixedUpdate()
-    {
-        currentlife = _pLife;
-    }
-
-    
+    }    
 }

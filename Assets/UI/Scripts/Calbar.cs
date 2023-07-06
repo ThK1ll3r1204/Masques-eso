@@ -15,7 +15,7 @@ public class Calbar : MonoBehaviour
         pStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Slider.value = pStats._calcio;
     }

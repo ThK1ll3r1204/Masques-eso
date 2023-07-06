@@ -126,8 +126,8 @@ MonoBehaviour:
   playerDetected: 0
   playerFocused: 0
   detectorOrigin: {fileID: 8968648389936285082}
-  radiusIdle: 8.5
-  radiusFocus: 15
+  radiusIdle: 15
+  radiusFocus: 20
   detectionDelay: 0.3
   detectorLayerMask:
     serializedVersion: 2
@@ -179,7 +179,7 @@ MonoBehaviour:
   player: {fileID: 0}
   goblinRock: {fileID: 6341033498270179647, guid: 3069ad8cc286f3848a4ae93a764a616b, type: 3}
   moveSpeed: 4
-  _bSpeed: 6
+  _bSpeed: 15
   _bCooldown: 2.5
   isAttacking: 0
   isChasing: 0
