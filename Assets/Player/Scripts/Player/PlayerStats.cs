@@ -31,7 +31,6 @@ public class PlayerStats : MonoBehaviour
         lifebar = FindAnyObjectByType<Lifebar>();
         _pLife = 100f;
         currentlife = _pLife;
-        lifebar.SetMaxLife(_pLife);
         _calcio = 100f;
         enemyKilled = false;
         wpnIsBow = true;
@@ -100,8 +99,6 @@ public class PlayerStats : MonoBehaviour
     private void FixedUpdate()
     {
         currentlife = _pLife;
-        lifebar.Setlife(currentlife);
-        
     }
 
     
