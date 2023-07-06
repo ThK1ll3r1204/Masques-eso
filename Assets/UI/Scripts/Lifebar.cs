@@ -15,7 +15,7 @@ public class Lifebar : MonoBehaviour
         pStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Slider.value = pStats._pLife;
     }

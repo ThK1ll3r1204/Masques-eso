@@ -69,7 +69,7 @@ Transform:
   - {fileID: 6880529841471709338}
   - {fileID: 7200413476181911186}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.088}
 --- !u!212 &6141735079243350029
 SpriteRenderer:
@@ -222,12 +222,10 @@ MonoBehaviour:
   bow: {fileID: 7492143038720159327}
   fireWand: {fileID: 4122696806439572975}
   wpnIsBow: 0
-  currentlife: 0
-  lifebar: {fileID: 0}
   canShoot: 0
   fireBallsCount: 0
   fireWandCooldown: 0
-  maxFireWandCooldown: 0
+  maxFireWandCooldown: 15
 --- !u!114 &6838978787705890306
 MonoBehaviour:
   m_ObjectHideFlags: 0

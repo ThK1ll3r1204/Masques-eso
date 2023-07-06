@@ -24,12 +24,21 @@ public class PlayerStats : MonoBehaviour
     public int fireBallsCount;
 
     public float fireWandCooldown;
-    [SerializeField] float maxFireWandCooldown;
+    public float maxFireWandCooldown;
 
+
+
+    GameObject theBar;
+    Image wBarSprite;
+
+    private void Awake()
+    {
+        theBar = GameObject.Find("WandBar").gameObject;
+        wBarSprite = GameObject.Find("Wandfill").GetComponent<Image>();
+    }
 
     private void Start()
     {
-
         pMov = GetComponent<Movement>();
         _pLife = 100f;
         _calcio = 100f;
@@ -85,6 +94,19 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+
+        // Barra del baculo
+        if(fireBallsCount >= 3)
+        {
+            theBar.gameObject.SetActive(true);
+        }
+        else
+        {
+            theBar.gameObject.SetActive(false);
+        }
+
+
+        wBarSprite.fillAmount = fireWandCooldown / maxFireWandCooldown;
     }
 
     public void TakeDamage(float damage)

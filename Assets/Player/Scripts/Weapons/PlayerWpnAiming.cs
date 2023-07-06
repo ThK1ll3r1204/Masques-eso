@@ -86,7 +86,7 @@ public class PlayerWpnAiming : MonoBehaviour
         }
 
 
-        if (pStats.fireBallsCount <= 0)
+        if (pStats.fireBallsCount <= 0 && !pStats.wpnIsBow)
             wAnimator.SetBool("Cooldown", false);
 
 
