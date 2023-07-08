@@ -8,12 +8,13 @@ public class NPCInteraction : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField, TextArea(4, 6)] private string[] dialogos;
     [SerializeField] private TMP_Text dialogueText;
-    Interaction interaction;
+    Interaction interaction; 
 
     private float tipeo = 0.05f;
 
     private bool DialogueStart;
     private int lineIndex;
+
    void Awake()
     {
         interaction = transform.Find("wantInteract").GetComponent<Interaction>();
