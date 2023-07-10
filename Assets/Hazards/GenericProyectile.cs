@@ -54,7 +54,7 @@ public class GenericProyectile : MonoBehaviour
             }
 
 
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") && anims.blockSensation)
             {
                 float finalDamage = damage * 1.5f;
                 EnemiesLife eLife = collision.GetComponent<EnemiesLife>();

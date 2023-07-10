@@ -100,6 +100,12 @@ public class PlayerStats : MonoBehaviour
             }
 
         }
+
+        if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene(5);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -109,11 +115,6 @@ public class PlayerStats : MonoBehaviour
             key++;
             Destroy(collision.gameObject);
             
-            if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.J) )
-            {
-                SceneManager.LoadScene(5);
-            }
-
         }
     }
 
