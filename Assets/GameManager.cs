@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public bool isPaused;
 
+    public List<NPCs> NPCList = new List<NPCs>();
+
     private void Awake()
     {
         HUD = GameObject.Find("HUD").gameObject;
@@ -30,18 +32,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2")
+        if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2F")
         {
             HUD.gameObject.SetActive(true);
             pStats.canChangeWpn = true;
         }
         else
-        { 
+        {
             HUD.gameObject.SetActive(false);
             pStats.canChangeWpn = false;
         }
 
         isPaused = false;
+
+        // StartCoroutine(DebugNPCs());
     }
 
 
@@ -78,12 +82,25 @@ public class GameManager : MonoBehaviour
         if (isPaused)
         {
             pStats.canShoot = false;
-            Time.timeScale = 0f; 
+            Time.timeScale = 0f;
         }
         else
         {
             pStats.canShoot = true;
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
     }
+
+
+    private IEnumerator DebugNPCs()
+    {
+        foreach (NPCs npc in NPCList)
+        {
+            Debug.Log(npc.name + " Soy del gManager");
+        }
+        Debug.Log("//////////////////////");
+        yield return new WaitForSeconds(5);
+        StartCoroutine(DebugNPCs());
+    }
 }
+

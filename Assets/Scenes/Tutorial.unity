@@ -4878,6 +4878,7 @@ GameObject:
   - component: {fileID: 489342632}
   - component: {fileID: 489342631}
   - component: {fileID: 489342634}
+  - component: {fileID: 489342635}
   m_Layer: 0
   m_Name: Granjero
   m_TagString: Untagged
@@ -5009,6 +5010,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.006851117, y: -0.05077847}
   m_Size: {x: 0.14087026, y: 0.14087026}
   m_Direction: 0
+--- !u!114 &489342635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489342630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898ff0f4cf71da43921ee0270f7633f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 0}
+  dialogos:
+  - ya tu sae keloke
+  dialogueText: {fileID: 0}
 --- !u!1 &550850267
 GameObject:
   m_ObjectHideFlags: 0
@@ -34713,6 +34730,7 @@ GameObject:
   - component: {fileID: 1628220427}
   - component: {fileID: 1628220429}
   - component: {fileID: 1628220430}
+  - component: {fileID: 1628220431}
   m_Layer: 0
   m_Name: Carnicero
   m_TagString: Untagged
@@ -34844,6 +34862,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.004548797, y: -0.060304362}
   m_Size: {x: 0.13611993, y: 0.13611993}
   m_Direction: 0
+--- !u!114 &1628220431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628220426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898ff0f4cf71da43921ee0270f7633f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 0}
+  dialogos:
+  - Ehhhh
+  - Hola
+  dialogueText: {fileID: 0}
 --- !u!4 &1667379178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8421601909245597790, guid: 11cca2c8e6b4ea04d9606ab46c05209e, type: 3}
