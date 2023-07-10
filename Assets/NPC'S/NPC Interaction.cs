@@ -5,47 +5,95 @@ using TMPro;
 
 public class NPCInteraction : MonoBehaviour
 {
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField, TextArea(4, 6)] private string[] dialogos;
-    [SerializeField] private TMP_Text dialogueText;
-    Interaction interaction; 
+    GameManager gManager;
+
+    [SerializeField] GameObject dialoguePanel;
+    [SerializeField, TextArea(4, 5)] private string[] dialogos;
+    [SerializeField] TMP_Text dialogueText;
+    Interaction interaction;
 
     private float tipeo = 0.05f;
 
     private bool DialogueStart;
+    bool dialoguesInCourse;
     private int lineIndex;
 
-   void Awake()
+    List<int> charAmount = new List<int>();
+    int charCount;
+
+    Coroutine StartShowLine;
+    private void Awake()
     {
-        interaction = transform.Find("wantInteract").GetComponent<Interaction>();
+        interaction = transform.Find("Interaction Sign").GetComponent<Interaction>();
+        gManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
+
+    private void Start()
+    {
+        for (int i = 0; i < dialogos.Length; i++)
+        {
+            charCount = 0;
+            foreach (char ch in dialogos[i])
+            {
+                charCount++;
+            }
+            charAmount.Add(charCount);
+        }
+
+        DialogueStart = false;
+        dialoguePanel.SetActive(false);
+    }
+
     private void Update()
     {
-        if(interaction.wantInteract == true)
+        if (interaction.wantInteract == true)
         {
-            if(!DialogueStart)
+            if (!DialogueStart)
             {
                 StartDialogue();
             }
+        }
+
+        if (lineIndex == dialogos.Length - 1 && Input.GetKeyUp(KeyCode.E) && dialogueText.textInfo.characterCount > 5)
+        {
+            StartCoroutine(StopLine());
+        }
+        else if (Input.GetKeyUp(KeyCode.E) && dialogueText.textInfo.characterCount > 5)
+        {
+            lineIndex++;
+            StopCoroutine(StartShowLine);
+            StartShowLine = StartCoroutine(ShowLine());
         }
     }
 
     private void StartDialogue()
     {
-        DialogueStart = true;
         dialoguePanel.SetActive(true);
+        DialogueStart = true;
         lineIndex = 0;
-        StartCoroutine(ShowLine());
+        gManager.isPaused = true;
+        StartShowLine = StartCoroutine(ShowLine());
     }
 
     private IEnumerator ShowLine()
     {
         dialogueText.text = string.Empty;
-
-        foreach(char ch in dialogos[lineIndex])
+        foreach (char ch in dialogos[lineIndex])
         {
             dialogueText.text += ch;
-            yield return new WaitForSeconds(tipeo);
+            yield return new WaitForSecondsRealtime(tipeo);
         }
+    }
+
+
+    private IEnumerator StopLine()
+    {
+        StopCoroutine(StartShowLine);
+        gManager.isPaused = false;
+        dialogueText.text = string.Empty;
+        DialogueStart = false;
+        lineIndex = 0;
+        yield return new WaitForSecondsRealtime(0.1f);
+        dialoguePanel.SetActive(false);
     }
 }

@@ -9,15 +9,6 @@ public class Interaction : MonoBehaviour
     public bool wantInteract;
     public bool couldInteract;
 
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField, TextArea(4, 6)] private string[] dialogos;
-    [SerializeField] private TMP_Text dialogueText;
-
-    private float tipeo = 0.05f;
-
-    private bool DialogueStart;
-    private int lineIndex;
-
     Color activate;
     void Awake()
     {
@@ -32,31 +23,6 @@ public class Interaction : MonoBehaviour
                 wantInteract = true;
             else
                 wantInteract = false;
-        }
-        if (wantInteract == true)
-        {
-            if (!DialogueStart)
-            {
-                StartDialogue();
-            }
-        }
-    }
-    private void StartDialogue()
-    {
-        DialogueStart = true;
-        dialoguePanel.SetActive(true);
-        lineIndex = 0;
-        StartCoroutine(ShowLine());
-    }
-
-    private IEnumerator ShowLine()
-    {
-        dialogueText.text = string.Empty;
-
-        foreach (char ch in dialogos[lineIndex])
-        {
-            dialogueText.text += ch;
-            yield return new WaitForSeconds(tipeo);
         }
     }
 

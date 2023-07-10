@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWpnAiming : MonoBehaviour
 {
     //Fabri
+    GameManager gManager;
 
     public GameObject thisGun;
     public GameObject pCorpse;
@@ -38,6 +39,8 @@ public class PlayerWpnAiming : MonoBehaviour
         thisGun = this.gameObject;
         wSprite = this.GetComponent<SpriteRenderer>();
         wAnimator = this.GetComponent<Animator>();
+
+        gManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Start()
@@ -46,68 +49,69 @@ public class PlayerWpnAiming : MonoBehaviour
 
     void Update()
     {
-        Vector3 mPosFromPlayer = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mPosFromPlayer.z = 0f;
-
-        AimCordFromPlayer = mPosFromPlayer - pCorpse.transform.position;
-
-        actualAnimation = pAnimator.GetCurrentAnimatorClipInfo(0);
-        string aAnimName = actualAnimation[0].clip.name;
-
-
-        if (pStats.wpnIsBow)
+        if (!gManager.isPaused)
         {
-            // Rotacion del arco
-            float angle = Mathf.Atan2(AimCordFromPlayer.y, AimCordFromPlayer.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Vector3 mPosFromPlayer = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mPosFromPlayer.z = 0f;
 
-            // Eje al que apunta el arco
-            BowAimingOnAxis(aAnimName);
+            AimCordFromPlayer = mPosFromPlayer - pCorpse.transform.position;
 
-            // Posicion dependiendo a donde apunta el arco
-            BowAimingPosition(aAnimName);
-
-            pStats.canShoot = true;
-        }
-        else
-        {
-            transform.rotation = Quaternion.identity;
-            // Eje al que mira el baculo
-            FireWandAimingOnAxis();
-
-            // Posicion dependiendo a donde apunta el jugador
-            FireWandAimingPosition(aAnimName);
-        }
-
-        if (pStats.fireBallsCount >= 3 && !pStats.wpnIsBow)
-        {
-            pStats.canShoot = false;
-            wAnimator.SetBool("Cooldown", true);
-        }
+            actualAnimation = pAnimator.GetCurrentAnimatorClipInfo(0);
+            string aAnimName = actualAnimation[0].clip.name;
 
 
-        if (pStats.fireBallsCount <= 0 && !pStats.wpnIsBow)
-            wAnimator.SetBool("Cooldown", false);
+            if (pStats.wpnIsBow)
+            {
+                // Rotacion del arco
+                float angle = Mathf.Atan2(AimCordFromPlayer.y, AimCordFromPlayer.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                // Eje al que apunta el arco
+                BowAimingOnAxis(aAnimName);
+
+                // Posicion dependiendo a donde apunta el arco
+                BowAimingPosition(aAnimName);
+
+                pStats.canShoot = true;
+            }
+            else
+            {
+                transform.rotation = Quaternion.identity;
+                // Eje al que mira el baculo
+                FireWandAimingOnAxis();
+
+                // Posicion dependiendo a donde apunta el jugador
+                FireWandAimingPosition(aAnimName);
+            }
+
+            if (pStats.fireBallsCount >= 3 && !pStats.wpnIsBow)
+            {
+                pStats.canShoot = false;
+                wAnimator.SetBool("Cooldown", true);
+            }
 
 
-        //Disparo
-        if (Input.GetMouseButton(0) && _bCooldowntimer <= 0 && pStats.canShoot)
-        {
-            wAnimator.SetTrigger("Shoot");
+            if (pStats.fireBallsCount <= 0 && !pStats.wpnIsBow)
+                wAnimator.SetBool("Cooldown", false);
+            //Disparo
+            if (Input.GetMouseButton(0) && _bCooldowntimer <= 0 && pStats.canShoot)
+            {
+                wAnimator.SetTrigger("Shoot");
                 float angle = Mathf.Atan2(AimCordFromPlayer.y, AimCordFromPlayer.x) * Mathf.Rad2Deg;
                 GameObject bullet = Instantiate(_pBullet, _firePoint.position, Quaternion.identity);
                 bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 bullet.GetComponent<Rigidbody2D>().velocity = AimCordFromPlayer.normalized * _bSpeed;
                 _bCooldowntimer = _bCooldown;
-            FindObjectOfType<AudioManager>().Play("Disparo");
+                FindObjectOfType<AudioManager>().Play("Disparo");
 
-            if(!pStats.wpnIsBow)
-            {
-                pStats.fireBallsCount += 1;
+                if (!pStats.wpnIsBow)
+                {
+                    pStats.fireBallsCount += 1;
+                }
+
+                //if(pStats.wpnIsBow)
+                //FindObjectOfType<AudioManager>().Play("Disparo");
             }
-
-            //if(pStats.wpnIsBow)
-            //FindObjectOfType<AudioManager>().Play("Disparo");
         }
     }
 
