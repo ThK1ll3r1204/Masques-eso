@@ -207,6 +207,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &36217023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_Name
+      value: Sign 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908756317037497194, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908756317037497194, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 700519292}
+    - target: {fileID: 4908756317037497194, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: dialogos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908756317037497194, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: dialogos.Array.data[0]
+      value: "\xA1Bienvenido a Forwind!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 2129982792}
+  m_SourcePrefab: {fileID: 100100000, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
 --- !u!1 &60036789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,11 +4273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.45
+      value: -13.99
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.22
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 62518089663867373, guid: f624a630caf377f4c8e98adfc52b4b8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5251,7 +5331,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
       propertyPath: m_Name
-      value: Sign
+      value: Sign 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908756317037497194, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
       propertyPath: dialogueText
@@ -5275,11 +5355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.19
+      value: -1.81
       objectReference: {fileID: 0}
     - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.45
+      value: -11.61
       objectReference: {fileID: 0}
     - target: {fileID: 7273885639252334466, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5316,7 +5396,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1020181464}
   m_SourcePrefab: {fileID: 100100000, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
 --- !u!1 &877587183
 GameObject:
@@ -5383,7 +5466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877587183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.45, y: -2.22, z: -9}
+  m_LocalPosition: {x: -13.99, y: -2.17, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5529,6 +5612,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1020181459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+  m_PrefabInstance: {fileID: 738951316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1020181464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020181459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898ff0f4cf71da43921ee0270f7633f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 700519292}
+  dialogos:
+  - "\xA1Bienvenido a Forwind!"
+  dialogueText: {fileID: 0}
 --- !u!1001 &1064444961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34524,7 +34628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522445883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8573465, y: -2.2509115, z: -9}
+  m_LocalPosition: {x: -7.8570786, y: -2.211278, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36665,6 +36769,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2129982790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3608870827928728969, guid: 9fac6694551dac649b18e2914bfb3c53, type: 3}
+  m_PrefabInstance: {fileID: 36217023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2129982792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129982790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898ff0f4cf71da43921ee0270f7633f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 700519292}
+  dialogos:
+  - "\xA1Demuestra tu valor!"
+  - "Apuntar con el rat\xF3n\r\nDisparar con click derecho\r\nCambiar de arma con
+    \"Q\""
+  dialogueText: {fileID: 0}
 --- !u!1001 &2133688170953753797
 PrefabInstance:
   m_ObjectHideFlags: 0
