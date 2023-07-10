@@ -31,6 +31,13 @@ public class PlayerStats : MonoBehaviour
     public float fireWandCooldown;
     public float maxFireWandCooldown;
 
+
+    //BatPis
+    public int damagePerSecond = 20;
+
+    private float damageInterval = 1f;
+    private float nextDamageTime;
+
     private void Awake()
     {
     }
@@ -50,7 +57,7 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        winLevel1 = Physics2D.OverlapCircle(transform.position, 2f, winLayer);
+        winLevel1 = Physics2D.OverlapCircle(transform.position, 1.5f, winLayer);
 
         if (!gManager.isPaused)
         {
@@ -101,6 +108,8 @@ public class PlayerStats : MonoBehaviour
 
         }
 
+
+
         if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene(5);
@@ -115,6 +124,18 @@ public class PlayerStats : MonoBehaviour
             key++;
             Destroy(collision.gameObject);
             
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BatPis"))
+        {
+            if (Time.time >= nextDamageTime)
+            {
+                _pLife -= damagePerSecond;
+                nextDamageTime = Time.time + damageInterval;
+            }
         }
     }
 
@@ -142,9 +163,6 @@ public class PlayerStats : MonoBehaviour
         SceneManager.LoadScene("Derrota");
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, 2f);
-    }
+    
 
 }
