@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public bool isPaused;
 
+    public List<NPCs> NPCList = new List<NPCs>();
+
     private void Awake()
     {
         HUD = GameObject.Find("HUD").gameObject;
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
         }
 
         isPaused = false;
+
+       // StartCoroutine(DebugNPCs());
     }
 
 
@@ -86,4 +90,17 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f; 
         }
     }
+
+
+    private IEnumerator DebugNPCs()
+    {
+        foreach(NPCs npc in NPCList)
+        {
+            Debug.Log(npc.name + " Soy del gManager");
+        }
+        Debug.Log("//////////////////////");
+        yield return new WaitForSeconds(5);
+        StartCoroutine(DebugNPCs());
+    }
 }
+
