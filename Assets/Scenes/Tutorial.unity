@@ -34567,7 +34567,6 @@ GameObject:
   - component: {fileID: 1628220427}
   - component: {fileID: 1628220429}
   - component: {fileID: 1628220430}
-  - component: {fileID: 1628220431}
   m_Layer: 0
   m_Name: Carnicero
   m_TagString: Untagged

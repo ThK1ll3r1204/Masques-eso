@@ -129,28 +129,6 @@ public class NPCInteraction : MonoBehaviour
         StopCoroutine(StartShowLine);
         yield return new WaitForSecondsRealtime(0.1f);
         dialoguePanel.SetActive(false);
-        foreach (NPCs npc in gManager.NPCList)
-        {
-            if (npc.name != this.gameObject.name)
-            {
-                deActivateObj = GameObject.Find(npc.name);
-                deActivateObj.GetComponent<NPCInteraction>().enabled = true;
-            }
-        }
-    }
-
-
-    private IEnumerator DebugNPCs()
-    {
-        Debug.Log(thisNPC.name);
-        Debug.Log("Im: " + this.gameObject.name);
-        foreach (string line in thisNPC.lines)
-        {
-            Debug.Log("\n" + line);
-        }
-        Debug.Log("//////////////////////");
-        yield return new WaitForSeconds(5);
-        StartCoroutine(DebugNPCs());
     }
 }
 
