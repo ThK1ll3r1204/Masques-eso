@@ -10,7 +10,8 @@ public class PlayerStats : MonoBehaviour
 {
     GameManager gManager;
 
-    //Luis
+    [SerializeField] int key;
+
     [SerializeField] Movement pMov;
     public float _pLife;
     public bool enemyKilled;
@@ -21,13 +22,21 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject fireWand;
 
     public bool wpnIsBow;
-
+    public bool  winLevel1;
+    [SerializeField] LayerMask winLayer;
     public bool canShoot;
     public bool canChangeWpn;
     public int fireBallsCount;
 
     public float fireWandCooldown;
     public float maxFireWandCooldown;
+
+
+    //BatPis
+    public int damagePerSecond = 20;
+
+    private float damageInterval = 1f;
+    private float nextDamageTime;
 
     private void Awake()
     {
@@ -48,6 +57,8 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
+        winLevel1 = Physics2D.OverlapCircle(transform.position, 1.5f, winLayer);
+
         if (!gManager.isPaused)
         {
             //El calcio baja
@@ -96,6 +107,36 @@ public class PlayerStats : MonoBehaviour
             }
 
         }
+
+
+
+        if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene(5);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            key++;
+            Destroy(collision.gameObject);
+            
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BatPis"))
+        {
+            if (Time.time >= nextDamageTime)
+            {
+                _pLife -= damagePerSecond;
+                nextDamageTime = Time.time + damageInterval;
+            }
+        }
     }
 
     public void TakeDamage(float damage)
@@ -120,5 +161,8 @@ public class PlayerStats : MonoBehaviour
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
         SceneManager.LoadScene("Derrota");
-    }    
+    }
+
+    
+
 }

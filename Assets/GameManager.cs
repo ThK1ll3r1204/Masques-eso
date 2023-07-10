@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2F")
+        if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Level2")
         {
             HUD.gameObject.SetActive(true);
             pStats.canChangeWpn = true;
@@ -103,4 +103,3 @@ public class GameManager : MonoBehaviour
         StartCoroutine(DebugNPCs());
     }
 }
-

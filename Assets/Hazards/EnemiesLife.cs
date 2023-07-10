@@ -31,6 +31,7 @@ public class EnemiesLife : MonoBehaviour
         if (life <= 0)
         {
             Die();
+            FindObjectOfType<AudioManager>().Play("GoblinDeath");
         }
     }
 

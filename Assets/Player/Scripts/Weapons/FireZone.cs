@@ -14,6 +14,11 @@ public class FireZone : MonoBehaviour
     FireBall fBall;
     PlayerBullet pBullet;
 
+    [SerializeField] bool InDamageArea;
+    [SerializeField] float radius;
+    [SerializeField] LayerMask enemies;
+ 
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -24,6 +29,9 @@ public class FireZone : MonoBehaviour
 
     void Update()
     {
+        
+        
+
         if (transform.parent != null && transform.parent.childCount > 1)
         {
             Destroy(gameObject);
@@ -45,7 +53,7 @@ public class FireZone : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
             timer = 1.2f;
-
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
