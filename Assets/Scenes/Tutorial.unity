@@ -4598,9 +4598,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 700519292}
   dialogos:
-  - Hey muy buenas a todos guapisimos!!!
-  - Aqui Vegetta777 en un gamplay en directo de Planeta Vegetta
-  - Y en el dia de hoy, me cago en todo
+  - "Mi elegido. De ti depende salvar al pueblo de Forwind de esta oscura maldici\xF3n."
+  - "El castillo de Kutor, el mago oscuro, yace m\xE1s all\xE1 del bosque ah\xED
+    es donde encontr\xE1s el espejo en el cu\xE1l han atrapado nuestra humanidad."
+  - "Pero ten mucho cuidado, el camino es peligroso. Ya no s\xF3lo por los enemigos,
+    si no porque, m\xE1s all\xE1 de mi protecci\xF3n tu cuerpo comenzar\xE1 a debilitarse. "
+  - "Una vez salgas de los l\xEDmites del pueblo, debes estar atento de ello. Puedes
+    recuperar parte de tu fuerza vital deshaci\xE9ndote de aquellos que resguardan
+    la fortaleza."
+  - "Si a\xFAn no te sientes preparado, puedes probar tus habilidades en el campo
+    de entrenamiento, pero no demores, cada segundo es vital."
   dialogueText: {fileID: 394357570}
 --- !u!1 &389341380
 GameObject:
@@ -34596,7 +34603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522445883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.847081, y: -2.2509801, z: -9}
+  m_LocalPosition: {x: -7.8533487, y: -2.2509363, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
