@@ -8,9 +8,13 @@ public class GenericProyectile : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] Rigidbody2D rb2d;
 
+    [SerializeField] PlayerAnimations anims;
+
     public GameObject PEffect;
 
-    public bool counterShot;
+    public GameObject shooter;
+
+    
 
     //Detector raycast
     [field: SerializeField]
@@ -32,9 +36,10 @@ public class GenericProyectile : MonoBehaviour
     public bool showGizmos = true;
     private void Awake()
     {
+        anims = GameObject.Find("Player").GetComponent<PlayerAnimations>();
         pStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         rb2d = gameObject.GetComponent<Rigidbody2D>();
-        counterShot = false;
+        anims.blockSensation = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,7 +54,7 @@ public class GenericProyectile : MonoBehaviour
             }
 
 
-            if (collision.CompareTag("Enemy") && counterShot)
+            if (collision.CompareTag("Enemy"))
             {
                 float finalDamage = damage * 1.5f;
                 EnemiesLife eLife = collision.GetComponent<EnemiesLife>();
@@ -67,15 +72,20 @@ public class GenericProyectile : MonoBehaviour
         {
             player = value;
             playerDetected = player != null;
-
         }
     }
 
     private void Update()
     {
+        
+
         if (playerDetected && Input.GetKeyDown("space"))
         {
             StartCoroutine(CounterBlock());
+        }
+        else
+        {
+            anims.blockSensation = false;
         }
 
         PerformDetect();
@@ -123,9 +133,9 @@ public class GenericProyectile : MonoBehaviour
     {
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(0.1f);
-        counterShot = true;
+        anims.blockSensation = true;
         rb2d.constraints = RigidbodyConstraints2D.None;
-        Vector3 direction = this.transform.parent.position - transform.position;
+        Vector3 direction = shooter.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         this.GetComponent<Rigidbody2D>().velocity = direction.normalized * 10;
