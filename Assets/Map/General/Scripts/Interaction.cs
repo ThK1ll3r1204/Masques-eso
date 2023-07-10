@@ -14,6 +14,9 @@ public class Interaction : MonoBehaviour
     {
         interSignSprite = GetComponent<SpriteRenderer>();
     }
+    private void Start()
+    {
+    }
 
     private void Update()
     {
