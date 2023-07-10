@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    GameManager gManager;
     //Jose
     public Collider2D _coll;
     public Rigidbody2D _rb;
@@ -16,6 +17,8 @@ public class Movement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _coll = GetComponent<Collider2D>();
         pStats = this.GetComponent<PlayerStats>();
+
+        gManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -23,7 +26,7 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        if (!pStats.isDead)
+        if (!pStats.isDead && !gManager.isPaused)
         {
             Vector2 _move = new Vector2(horizontal, vertical).normalized;
             _rb.velocity = _move * _speed;
@@ -33,9 +36,6 @@ public class Movement : MonoBehaviour
                 isWalking = true;
             else
                 isWalking = false;
-
-            
-
         }
     }
 }

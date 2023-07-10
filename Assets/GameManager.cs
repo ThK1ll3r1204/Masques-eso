@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     Image lBarSprite;
     Image cBarSprite;
 
+    public bool isPaused;
 
     private void Awake()
     {
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
             HUD.gameObject.SetActive(false);
             pStats.canChangeWpn = false;
         }
+
+        isPaused = false;
     }
 
 
@@ -65,5 +68,22 @@ public class GameManager : MonoBehaviour
         cBarSprite.fillAmount = pStats._calcio / 100;
 
         #endregion
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene(5);
+        }
+
+
+        if (isPaused)
+        {
+            pStats.canShoot = false;
+            Time.timeScale = 0f; 
+        }
+        else
+        {
+            pStats.canShoot = true;
+            Time.timeScale = 1f; 
+        }
     }
 }

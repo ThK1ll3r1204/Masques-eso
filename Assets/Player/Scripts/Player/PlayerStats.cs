@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    GameManager gManager;
+
     //Luis
     [SerializeField] Movement pMov;
     public float _pLife;
@@ -39,59 +41,61 @@ public class PlayerStats : MonoBehaviour
         enemyKilled = false;
         wpnIsBow = true;
         canShoot = true;
+
+        gManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     
 
     void Update()
     {
-        //El calcio baja
-        _calcio -= Time.deltaTime;
-
-        //Limites del calcio
-        _calcio = Mathf.Clamp(_calcio, 0, 100f);
-
-        if (enemyKilled)
+        if (!gManager.isPaused)
         {
-            _calcio += 20;
-            enemyKilled = false;
-        }
+            //El calcio baja
+            _calcio -= Time.deltaTime;
 
-        
+            //Limites del calcio
+            _calcio = Mathf.Clamp(_calcio, 0, 100f);
 
-        if (Input.GetKeyUp(KeyCode.Q) && canChangeWpn)
-        {
-            if (!wpnIsBow)
-                wpnIsBow = true;
-            else
-                wpnIsBow = false;
-        }
-
-        if(wpnIsBow)
-        {
-            bow.SetActive(true);
-            fireWand.SetActive(false);
-        }
-        else
-        {
-            bow.SetActive(false);
-            fireWand.SetActive(true);
-        }
-
-
-        if (fireBallsCount >= 3)
-        {
-            fireWandCooldown -= Time.deltaTime;
-
-            if (fireWandCooldown <= 0)
+            if (enemyKilled)
             {
-                fireWandCooldown = maxFireWandCooldown;
-                fireBallsCount = 0;
-                canShoot = true;
+                _calcio += 20;
+                enemyKilled = false;
             }
+
+
+            if (Input.GetKeyUp(KeyCode.Q) && canChangeWpn)
+            {
+                if (!wpnIsBow)
+                    wpnIsBow = true;
+                else
+                    wpnIsBow = false;
+            }
+
+            if (wpnIsBow)
+            {
+                bow.SetActive(true);
+                fireWand.SetActive(false);
+            }
+            else
+            {
+                bow.SetActive(false);
+                fireWand.SetActive(true);
+            }
+
+
+            if (fireBallsCount >= 3)
+            {
+                fireWandCooldown -= Time.deltaTime;
+
+                if (fireWandCooldown <= 0)
+                {
+                    fireWandCooldown = maxFireWandCooldown;
+                    fireBallsCount = 0;
+                    canShoot = true;
+                }
+            }
+
         }
-
-
-        // Barra del baculo
     }
 
     public void TakeDamage(float damage)

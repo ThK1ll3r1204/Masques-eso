@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Interaction : MonoBehaviour
 {
     SpriteRenderer interSignSprite;
     public bool wantInteract;
     public bool couldInteract;
+
     Color activate;
     void Awake()
     {
