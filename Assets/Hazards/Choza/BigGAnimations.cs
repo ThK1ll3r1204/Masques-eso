@@ -19,6 +19,9 @@ public class BigGAnimations : MonoBehaviour
     [SerializeField] float radius;
 
 
+    [SerializeField] GameObject keyDrop;
+    [SerializeField] float forceDrop;
+
 
     void Awake()
     {
@@ -38,7 +41,7 @@ public class BigGAnimations : MonoBehaviour
 
             if (timer <= 0 && _canSpawn)
             {
-                _anim.SetBool("Spawn",true);
+                _anim.SetBool("Spawn", true);
                 GameObject Goblins = Instantiate(goblins, firePoint.transform.position, Quaternion.identity);
                 timer = timermax;
                 FindObjectOfType<AudioManager>().Play("Spawn");
@@ -47,7 +50,7 @@ public class BigGAnimations : MonoBehaviour
             {
                 _canSpawn = false;
                 radius = 0;
-                
+
             }
         }
 
@@ -70,6 +73,10 @@ public class BigGAnimations : MonoBehaviour
         if (_sLife <= 0)
         {
             _anim.SetBool("IsDead", true);
+
+            GameObject droppableObject = Instantiate(keyDrop, transform.position + Vector3.up, Quaternion.identity);
+
+            droppableObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * forceDrop, ForceMode2D.Impulse);
 
             Destroy(gameObject, 1f);
 
