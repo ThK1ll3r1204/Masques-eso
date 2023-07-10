@@ -10,8 +10,12 @@ public class SpawnBats : MonoBehaviour
     [SerializeField] float maxTimer;
 
     [SerializeField] Transform firePoint;
-
-    [SerializeField] float bullets;
+    [SerializeField] int batsPerSpawn;
+    Transform detectorOrigin;
+    [SerializeField] float radiusForEnemies;
+    [SerializeField] LayerMask enemiesLayerMask;
+    int enemiesinarea;
+    [SerializeField] int maxEnemiesAmount;
 
     //CircleCast
     [SerializeField] bool IsSpawning;
@@ -21,6 +25,9 @@ public class SpawnBats : MonoBehaviour
     
     void Start()
     {
+        batsPerSpawn = 5;
+        detectorOrigin = GetComponent<Transform>();
+        maxTimer = 2.75f;
         firePoint=GameObject.Find("firepoint").GetComponentInChildren<Transform>();
     }
 
@@ -29,17 +36,40 @@ public class SpawnBats : MonoBehaviour
     {
         IsSpawning = Physics2D.OverlapCircle(transform.position, radius, player);
 
-        if(IsSpawning && timer >= maxTimer)
+        Collider2D[] enemiesAmount = Physics2D.OverlapCircleAll((Vector2)detectorOrigin.position, radiusForEnemies, enemiesLayerMask);
+
+        if (enemiesAmount.Length >= maxEnemiesAmount)
+            IsSpawning = false;
+
+        enemiesinarea = enemiesAmount.Length;
+
+        if (IsSpawning)
         {
-            Spawn();
+            IsSpawning = true;
+
+            timer -= Time.deltaTime;
+
+            if (timer <= 0 && IsSpawning && batsPerSpawn>0)
+            {
+                GameObject bats = Instantiate(bat, firePoint.transform.position, Quaternion.identity);
+                timer = maxTimer;
+                batsPerSpawn--;
+                if (batsPerSpawn <= 0)
+                {
+                    batsPerSpawn = 0;
+
+                    IsSpawning = false;
+                }
+
+
+            }            
         }
     }
 
-    void Spawn()
+    private void OnDrawGizmos()
     {
-        GameObject bullet = Instantiate(bat, firePoint.position, Quaternion.identity);
-        bullet.transform.position = firePoint.position;
-        timer = 0;
+        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, radiusForEnemies);
     }
 
 }
