@@ -6,6 +6,8 @@ public class PlayerAnimations : MonoBehaviour
 {
     GameManager gManager;
 
+    AnimatorClipInfo[] actualAnimation;
+
     PlayerWpnAiming pAim;
     Animator anim;
     SpriteRenderer pSprite;
@@ -13,8 +15,11 @@ public class PlayerAnimations : MonoBehaviour
     Movement pMove;
     PlayerStats pStats;
 
+    public bool blockSensation= false;
+
     private void Awake()
     {
+        blockSensation = false;
         anim = this.GetComponent<Animator>();
         pSprite = this.GetComponent<SpriteRenderer>();
         pTransform = this.GetComponent<Transform>();
@@ -27,6 +32,9 @@ public class PlayerAnimations : MonoBehaviour
 
     void Update()
     {
+        actualAnimation = anim.GetCurrentAnimatorClipInfo(0);
+        string aAnimName = actualAnimation[0].clip.name;
+
         if (!gManager.isPaused)
         {
             pAim = GameObject.Find("Guns").GetComponentInChildren<PlayerWpnAiming>();
@@ -45,6 +53,17 @@ public class PlayerAnimations : MonoBehaviour
             {
                 anim.SetTrigger("isDead");
             }
+
+            if (blockSensation && Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetTrigger("OnBlock");
+                
+            }
+            else if(!blockSensation && Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetTrigger("OffBlock");
+            }
+
         }
     }
 

@@ -49,7 +49,7 @@ public class FollowPath : MonoBehaviour
         timer += Time.deltaTime;
         if(timer>= Maxtimer)
         {
-            speed = 1f;
+            speed = 0.5f;
             timer = 0;
             Maxtimer = 0.5f;
         }

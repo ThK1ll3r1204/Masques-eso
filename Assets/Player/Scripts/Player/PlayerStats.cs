@@ -10,7 +10,8 @@ public class PlayerStats : MonoBehaviour
 {
     GameManager gManager;
 
-    //Luis
+    [SerializeField] int key;
+
     [SerializeField] Movement pMov;
     public float _pLife;
     public bool enemyKilled;
@@ -21,7 +22,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject fireWand;
 
     public bool wpnIsBow;
-
+    public bool  winLevel1;
+    [SerializeField] LayerMask winLayer;
     public bool canShoot;
     public bool canChangeWpn;
     public int fireBallsCount;
@@ -48,6 +50,8 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
+        winLevel1 = Physics2D.OverlapCircle(transform.position, 2f, winLayer);
+
         if (!gManager.isPaused)
         {
             //El calcio baja
@@ -98,6 +102,21 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            key++;
+            Destroy(collision.gameObject);
+            
+            if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.J) )
+            {
+                SceneManager.LoadScene(5);
+            }
+
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         _pLife += damage;
@@ -120,5 +139,11 @@ public class PlayerStats : MonoBehaviour
         isDead = true;
         GameObject.Find("Guns").SetActive(false);
         SceneManager.LoadScene("Derrota");
-    }    
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 2f);
+    }
+
 }

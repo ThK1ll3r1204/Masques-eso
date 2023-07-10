@@ -38,7 +38,6 @@ public class BigGAnimations : MonoBehaviour
             _canSpawn = true;
 
             timer -= Time.deltaTime;
-
             if (timer <= 0 && _canSpawn)
             {
                 _anim.SetBool("Spawn", true);
@@ -60,6 +59,7 @@ public class BigGAnimations : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+            FindObjectOfType<AudioManager>().Play("BigG");
             ChangeLife(-20f);
         }
     }

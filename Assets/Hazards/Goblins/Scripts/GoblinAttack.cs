@@ -9,6 +9,8 @@ public class GoblinAttack : MonoBehaviour
     [SerializeField] public GameObject goblinRock;
     [SerializeField] public float moveSpeed;
 
+
+
     [SerializeField] float _bSpeed;
     [SerializeField] float _bCooldown;
     private float _bCooldowntimer;
@@ -73,6 +75,8 @@ public class GoblinAttack : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //anim.SetTrigger("Shoot");
         GameObject bullet = Instantiate(goblinRock, transform.position, Quaternion.identity, this.transform);
+        bullet.GetComponent<GenericProyectile>().shooter = this.gameObject;        
+        bullet.transform.parent = null;
         bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * _bSpeed;
         _bCooldowntimer = _bCooldown;
