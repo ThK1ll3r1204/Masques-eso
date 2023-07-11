@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWpnAiming : MonoBehaviour
 {
@@ -112,7 +113,25 @@ public class PlayerWpnAiming : MonoBehaviour
                 //if(pStats.wpnIsBow)
                 //FindObjectOfType<AudioManager>().Play("Disparo");
             }
+            else if (SceneManager.GetActiveScene().name == "Level2F" && (Input.GetMouseButton(0) && _bCooldowntimer <= 0 && pStats.canShoot))
+            {
+                wAnimator.SetTrigger("Shoot");
+                float angle = Mathf.Atan2(AimCordFromPlayer.y, AimCordFromPlayer.x) * Mathf.Rad2Deg;
+                GameObject bullet = Instantiate(_pBullet, _firePoint.position, Quaternion.identity);
+                bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                bullet.GetComponent<Rigidbody2D>().velocity = AimCordFromPlayer.normalized * _bSpeed;
+                _bCooldowntimer = _bCooldown;
+
+
+                if (!pStats.wpnIsBow)
+                {
+                    pStats.fireBallsCount += 1;
+                }
+            }
         }
+
+        
+
     }
 
     private void FireWandAimingOnAxis()

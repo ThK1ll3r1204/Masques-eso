@@ -31,6 +31,9 @@ public class PlayerStats : MonoBehaviour
     public float fireWandCooldown;
     public float maxFireWandCooldown;
 
+    [SerializeField] GameObject CuraParts;
+    [SerializeField] float heal = 30;
+
 
     //BatPis
     public int damagePerSecond = 20;
@@ -44,6 +47,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        heal = 30;
         pMov = GetComponent<Movement>();
         _pLife = 100f;
         _calcio = 100f;
@@ -108,11 +112,14 @@ public class PlayerStats : MonoBehaviour
 
         }
 
-
+        if(_pLife<=0)
+        {
+            Die();
+        }
 
         if (key >= 1 && winLevel1 && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene("Level2F");
         }
 
     }
@@ -125,6 +132,25 @@ public class PlayerStats : MonoBehaviour
             Destroy(collision.gameObject);
             
         }
+
+        if (collision.CompareTag("Chicken"))
+        {
+            _pLife += heal;
+
+            if (_pLife >= 100)
+            {
+                _pLife = 100;
+            }
+
+            Destroy(collision.gameObject);
+            if (CuraParts != null)
+            {
+                Instantiate(CuraParts, transform.position, Quaternion.identity, this.transform);
+                
+            }
+
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -135,7 +161,14 @@ public class PlayerStats : MonoBehaviour
             {
                 _pLife -= damagePerSecond;
                 nextDamageTime = Time.time + damageInterval;
+
             }
+
+            if (_pLife <= 0)
+            {
+                Die();
+            }
+
         }
     }
 

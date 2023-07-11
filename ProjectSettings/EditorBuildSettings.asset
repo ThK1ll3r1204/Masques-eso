@@ -12,17 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Creditos.unity
     guid: 88d4589231dee470a83d3283b88d9b74
   - enabled: 1
+    path: Assets/Scenes/Menus/Lore.unity
+    guid: fd786cf69e1e6ba4cbcd3da744ace8bb
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 6740e0ad1498db44392b4a6b2a15f8ac
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 7c8a1dd08e56f514e82faa83fe6864c1
   - enabled: 1
-    path: Assets/Scenes/Menus/Victoria Lv1.unity
-    guid: d2b0af92b7f6e49d5a934493a65c4826
-  - enabled: 1
     path: Assets/Scenes/Level2F.unity
     guid: c72c998762cc26a4c8a2abf4d86e9c02
+  - enabled: 1
+    path: Assets/Scenes/Menus/Victoria Lv1.unity
+    guid: d2b0af92b7f6e49d5a934493a65c4826
   - enabled: 1
     path: Assets/Scenes/Menus/Derrota.unity
     guid: 328e55da9bbd44affa2b051b427ac33f

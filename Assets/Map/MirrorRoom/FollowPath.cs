@@ -41,16 +41,19 @@ public class FollowPath : MonoBehaviour
             PresionaE.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (SceneManager.GetActiveScene().name == "Lore")
         {
-            if (secondInteract)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
-            else
-            {
-                interactPressed = true;
-                secondInteract = true;
+                if (secondInteract)
+                {
+                    SceneManager.LoadScene("Tutorial");
+                }
+                else
+                {
+                    interactPressed = true;
+                    secondInteract = true;
+                }
             }
         }
 

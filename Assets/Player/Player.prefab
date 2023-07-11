@@ -69,7 +69,7 @@ Transform:
   - {fileID: 6880529841471709338}
   - {fileID: 7200413476181911186}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.088}
 --- !u!212 &6141735079243350029
 SpriteRenderer:
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2574acd3ae1ce4582deef9b274b0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   pMov: {fileID: 0}
   _pLife: 100
   enemyKilled: 0
@@ -222,10 +223,18 @@ MonoBehaviour:
   bow: {fileID: 7492143038720159327}
   fireWand: {fileID: 4122696806439572975}
   wpnIsBow: 0
+  winLevel1: 0
+  winLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   canShoot: 0
+  canChangeWpn: 0
   fireBallsCount: 0
   fireWandCooldown: 0
   maxFireWandCooldown: 15
+  CuraParts: {fileID: 40682395882230901, guid: a3e0de577aaaef74186678d327e801be, type: 3}
+  heal: 30
+  damagePerSecond: 20
 --- !u!114 &6838978787705890306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4677f5b5694632e44ba4d23cf453434e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockSensation: 0
 --- !u!95 &1618380636554723387
 Animator:
   serializedVersion: 5

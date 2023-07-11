@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9107325123863443970, guid: 30c05b3dbf3ad634daf2b3abaf83b876, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9107325123863443970, guid: 30c05b3dbf3ad634daf2b3abaf83b876, type: 3}
       propertyPath: lengthInSec
@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9107325123863443970, guid: 30c05b3dbf3ad634daf2b3abaf83b876, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9107325123863443970, guid: 30c05b3dbf3ad634daf2b3abaf83b876, type: 3}
       propertyPath: InitialModule.startLifetime.scalar

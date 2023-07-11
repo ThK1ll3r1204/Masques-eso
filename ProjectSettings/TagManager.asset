@@ -11,6 +11,7 @@ TagManager:
   - Camera
   - BatPis
   - Key
+  - Chicken
   layers:
   - Default
   - TransparentFX
